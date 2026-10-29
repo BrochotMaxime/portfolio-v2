@@ -1,18 +1,17 @@
-$color-background: #111318;
-$color-text-primary: #f5f7fa;
+@use 'abstracts' as a;
 
 :root {
   font-family: Arial, sans-serif;
-  color: $color-text-primary;
-  background-color: $color-background;
+  color: a.$color-text-primary;
+  background-color: a.$color-background;
   font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-}
-
-* {
-  box-sizing: border-box;
 }
