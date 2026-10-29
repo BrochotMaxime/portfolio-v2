@@ -1,0 +1,14 @@
+@use 'layout' as l;
+
+/* Responsive breakpoints */
+@mixin tablet {
+  @media (min-width: l.$breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: l.$breakpoint-desktop) {
+    @content;
+  }
+}
