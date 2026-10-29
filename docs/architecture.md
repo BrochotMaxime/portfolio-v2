@@ -116,14 +116,31 @@ This keeps the application lightweight and avoids unnecessary infrastructure.
 
 ## Deployment
 
-The application will be deployed as a static site using Vercel.
+The application is deployed on Vercel and connected to the GitHub repository.
 
-Production builds are generated with:
+### Production
 
-```bash
-npm run build
-```
+- **Hosting:** Vercel
+- **Production branch:** `main`
+- **Framework:** Vite
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
+- **Production URL:** https://portfolio-v2-ashy-rho.vercel.app/
 
-The generated output is stored in `dist/`.
+Changes merged into `main` automatically trigger a production deployment.
 
-Deployment configuration and direct URL handling will be verified during the deployment setup issue.
+### Preview Deployments
+
+Pull requests can generate preview deployments on Vercel.
+
+These deployments allow changes to be tested before merging into `main`.
+
+### Client-Side Routing
+
+The application uses React Router with `BrowserRouter`.
+
+A `vercel.json` configuration rewrites application routes to `/index.html`, allowing React Router to handle navigation and page refreshes.
+
+### Custom Domain
+
+The custom domain remains assigned to the previous portfolio version until Portfolio V2 is ready for release.
