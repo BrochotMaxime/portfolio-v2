@@ -1,5 +1,14 @@
+import Container from '../components/layout/Container'
+
 function Home() {
-  return <h1>Home</h1>
+  return (
+    <main>
+      <Container>
+        <h1>Home</h1>
+        <p>Welcome to my portfolio.</p>
+      </Container>
+    </main>
+  )
 }
 
 export default Home
