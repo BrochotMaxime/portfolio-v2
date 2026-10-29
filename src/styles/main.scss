@@ -1,17 +1,3 @@
-@use 'abstracts' as a;
-
-:root {
-  font-family: Arial, sans-serif;
-  color: a.$color-text-primary;
-  background-color: a.$color-background;
-  font-synthesis: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-}
+@use 'base/reset';
+@use 'base/global';
+@use 'base/typography';

@@ -1,0 +1,107 @@
+@use '../abstracts' as a;
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: a.$font-heading;
+  font-weight: a.$font-weight-bold;
+  line-height: a.$line-height-tight;
+  color: a.$color-text-primary;
+}
+
+h1 {
+  font-size: a.$font-size-4xl;
+
+  @include a.desktop {
+    font-size: a.$font-size-5xl;
+  }
+}
+
+h2 {
+  font-size: a.$font-size-3xl;
+
+  @include a.desktop {
+    font-size: a.$font-size-4xl;
+  }
+}
+
+h3 {
+  font-size: a.$font-size-2xl;
+
+  @include a.desktop {
+    font-size: a.$font-size-3xl;
+  }
+}
+
+h4 {
+  font-size: a.$font-size-xl;
+
+  @include a.desktop {
+    font-size: a.$font-size-2xl;
+  }
+}
+
+h5 {
+  font-size: a.$font-size-lg;
+
+  @include a.desktop {
+    font-size: a.$font-size-xl;
+  }
+}
+
+h6 {
+  font-size: a.$font-size-base;
+
+  @include a.desktop {
+    font-size: a.$font-size-lg;
+  }
+}
+
+/* Body text */
+p {
+  font-family: a.$font-body;
+  font-size: a.$font-size-base;
+  font-weight: a.$font-weight-regular;
+  line-height: a.$line-height-relaxed;
+}
+
+small {
+  font-size: a.$font-size-sm;
+}
+
+/* Links */
+a {
+  color: a.$color-accent;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid a.$color-accent;
+    outline-offset: 3px;
+  }
+}
+
+p a {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* Technical text */
+code,
+pre,
+kbd,
+samp {
+  font-family: a.$font-mono;
+  font-size: a.$font-size-sm;
+}
