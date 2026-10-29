@@ -1,0 +1,16 @@
+@use '../abstracts' as a;
+
+.container {
+  width: 100%;
+  max-width: a.$container-max-width;
+  margin-inline: auto;
+  padding-inline: a.$space-4;
+
+  @include a.tablet {
+    padding-inline: a.$space-5;
+  }
+
+  @include a.desktop {
+    padding-inline: a.$space-6;
+  }
+}
