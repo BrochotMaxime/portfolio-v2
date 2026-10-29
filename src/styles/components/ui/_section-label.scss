@@ -1,0 +1,11 @@
+@use '../../abstracts' as a;
+
+.section-label {
+  font-family: a.$font-mono;
+  font-size: a.$font-size-xs;
+  font-weight: a.$font-weight-regular;
+  line-height: a.$line-height-normal;
+  color: a.$color-accent;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
