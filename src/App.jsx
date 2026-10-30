@@ -1,6 +1,6 @@
-import { Link, Routes, Route } from 'react-router'
+import { Routes, Route } from 'react-router'
 
-import Header from './components/layout/Header'
+import MainLayout from './components/layout/MainLayout'
 
 import Home from './pages/Home'
 import Projects from './pages/Projects'
@@ -8,33 +8,27 @@ import ProjectDetail from './pages/ProjectDetail'
 import About from './pages/About'
 import Resume from './pages/Resume'
 import Contact from './pages/Contact'
+import Legal from './pages/Legal'
 import NotFound from './pages/NotFound'
 
 function App() {
   return (
-    <>
-      <Header aria-label="Main navigation">
-        <Link to="/">Home</Link>
-        {' | '}
-        <Link to="/projects">Projects</Link>
-        {' | '}
-        <Link to="/about">About</Link>
-        {' | '}
-        <Link to="/resume">Resume</Link>
-        {' | '}
-        <Link to="/contact">Contact</Link>
-      </Header>
-
-      <Routes>
+    <Routes>
+      {/* Shared layout for all routes */}
+      <Route element={<MainLayout />}>
+        {/* Application pages */}
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/legal" element={<Legal />} />
+
+        {/* Fallback page for unknown routes */}
         <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
+      </Route>
+    </Routes>
   )
 }
 

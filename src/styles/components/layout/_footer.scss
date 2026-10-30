@@ -1,0 +1,152 @@
+@use '../../abstracts' as a;
+
+.footer {
+  border-top: 1px solid a.$color-border;
+  background-color: a.$color-background;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'identity socials'
+      'nav nav'
+      'copyright copyright';
+    align-items: center;
+    padding-block: a.$space-5;
+  }
+
+  &__identity {
+    grid-area: identity;
+  }
+
+  &__name {
+    color: a.$color-text-primary;
+    font-size: a.$font-size-sm;
+    font-weight: a.$font-weight-medium;
+  }
+
+  &__role {
+    margin-top: a.$space-2;
+    color: a.$color-text-secondary;
+    font-size: a.$font-size-sm;
+  }
+
+  &__socials {
+    grid-area: socials;
+    display: flex;
+    align-items: center;
+    gap: a.$space-4;
+  }
+
+  &__social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: a.$color-text-primary;
+    font-size: a.$font-size-2xl;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: a.$color-accent;
+      text-decoration: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid a.$color-accent;
+      outline-offset: 4px;
+      border-radius: a.$radius-sm;
+    }
+  }
+
+  &__nav {
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: a.$space-2;
+    margin-top: a.$space-5;
+    padding-block: a.$space-5;
+    border-top: 1px solid a.$color-border;
+    border-bottom: 1px solid a.$color-border;
+  }
+
+  &__link {
+    color: a.$color-text-primary;
+    font-size: a.$font-size-sm;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: a.$color-accent;
+      text-decoration: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid a.$color-accent;
+      outline-offset: 4px;
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    margin-top: a.$space-5;
+    color: a.$color-text-primary;
+    font-size: a.$font-size-sm;
+  }
+
+  @include a.tablet {
+    &__inner {
+      grid-template-columns: repeat(3, auto);
+      grid-template-areas:
+        'identity socials nav'
+        'copyright copyright copyright';
+      column-gap: a.$space-6;
+      padding-block: a.$space-6;
+    }
+
+    &__socials {
+      margin-left: a.$space-6;
+    }
+
+    &__nav {
+      justify-content: flex-end;
+      gap: a.$space-3;
+      margin-top: 0;
+      padding-block: 0;
+      border: 0;
+    }
+
+    &__copyright {
+      margin-top: a.$space-5;
+      padding-top: a.$space-5;
+      border-top: 1px solid a.$color-border;
+      text-align: center;
+    }
+  }
+
+  @include a.desktop {
+    &__inner {
+      grid-template-columns: repeat(4, auto);
+      grid-template-areas: 'identity socials copyright nav';
+      column-gap: a.$space-7;
+      padding-block: a.$space-6;
+    }
+
+    &__copyright {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+      text-align: center;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer__link,
+  .footer__social-link {
+    transition: none;
+  }
+}

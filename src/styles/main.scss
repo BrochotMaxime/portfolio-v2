@@ -3,7 +3,9 @@
 @use 'base/typography';
 
 @use 'components/layout/container';
+@use 'components/layout/footer';
 @use 'components/layout/header';
+@use 'components/layout/main-layout';
 
 @use 'components/ui/action-link';
 @use 'components/ui/divider';
