@@ -1,0 +1,196 @@
+@use '../../abstracts' as a;
+
+.header {
+  position: relative;
+  z-index: 20;
+  background-color: a.$color-background;
+  border-bottom: 1px solid a.$color-border;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: a.$space-4;
+    min-height: 5rem;
+  }
+
+  &__brand {
+    flex-shrink: 0;
+    font-family: a.$font-heading;
+    font-size: a.$font-size-xl;
+    font-weight: a.$font-weight-bold;
+    color: a.$color-text-primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+
+    font-size: a.$font-size-xl;
+    color: a.$color-text-primary;
+    background: transparent;
+    border: 1px solid a.$color-border;
+    border-radius: a.$radius-md;
+    cursor: pointer;
+
+    &:hover {
+      border-color: a.$color-accent;
+    }
+  }
+
+  &__nav {
+    display: none;
+    align-items: center;
+    gap: a.$space-5;
+  }
+
+  &__link {
+    font-family: a.$font-body;
+    font-size: a.$font-size-sm;
+    font-weight: a.$font-weight-medium;
+    color: a.$color-text-secondary;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+
+    &:hover,
+    &--active {
+      color: a.$color-accent;
+      text-decoration: none;
+    }
+  }
+
+  &__mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    padding-block: a.$space-3 a.$space-5;
+    background-color: a.$color-background;
+    border-bottom: 1px solid a.$color-border;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-1rem);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0s linear 0.25s;
+
+    pointer-events: none;
+
+    &--open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0s;
+    }
+  }
+
+  &__mobile-link {
+    position: relative;
+    display: block;
+    padding: a.$space-3;
+    border-radius: a.$radius-md;
+
+    font-family: a.$font-body;
+    font-size: a.$font-size-base;
+    font-weight: a.$font-weight-medium;
+    color: a.$color-text-secondary;
+    text-decoration: none;
+
+    &:hover,
+    &--active {
+      color: a.$color-accent;
+      background-color: a.$color-surface;
+      text-decoration: none;
+    }
+  }
+
+  &__mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: a.$space-1;
+  }
+
+  &__brand,
+  &__link,
+  &__menu-button,
+  &__mobile-link {
+    &:focus-visible {
+      z-index: 1;
+      outline: 2px solid a.$color-accent;
+      outline-offset: 4px;
+    }
+  }
+
+  @include a.desktop {
+    &__menu-button {
+      display: none;
+    }
+
+    &__nav {
+      display: flex;
+    }
+
+    &__mobile-nav {
+      display: none;
+    }
+  }
+}
+
+.header-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  padding: 0;
+  border: 0;
+  cursor: default;
+
+  background-color: rgba(0, 0, 0, 0.55);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+@include a.desktop {
+  .header-overlay {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__link,
+  .header__mobile-nav,
+  .header-overlay {
+    transition: none;
+  }
+}

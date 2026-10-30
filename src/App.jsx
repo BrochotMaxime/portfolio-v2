@@ -1,5 +1,7 @@
 import { Link, Routes, Route } from 'react-router'
 
+import Header from './components/layout/Header'
+
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
@@ -11,7 +13,7 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <>
-      <nav aria-label="Main navigation">
+      <Header aria-label="Main navigation">
         <Link to="/">Home</Link>
         {' | '}
         <Link to="/projects">Projects</Link>
@@ -21,7 +23,7 @@ function App() {
         <Link to="/resume">Resume</Link>
         {' | '}
         <Link to="/contact">Contact</Link>
-      </nav>
+      </Header>
 
       <Routes>
         <Route path="/" element={<Home />} />
