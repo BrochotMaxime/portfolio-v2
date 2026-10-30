@@ -35,11 +35,16 @@ function Header() {
     setMenuOpenPath(null)
   }
 
+  // Close the mobile menu and restore focus to the toggle button
+  function closeMenuAndRestoreFocus() {
+    closeMenu()
+    menuButtonRef.current?.focus()
+  }
+
   // Close the menu with Escape and restore button focus
   function handleMenuKeyDown(event) {
     if (event.key === 'Escape' && isMenuOpen) {
-      closeMenu()
-      menuButtonRef.current?.focus()
+      closeMenuAndRestoreFocus()
     }
   }
 
@@ -145,7 +150,7 @@ function Header() {
         aria-label="Close navigation"
         aria-hidden={!isMenuOpen}
         tabIndex={-1}
-        onClick={closeMenu}
+        onClick={closeMenuAndRestoreFocus}
       />
     </>
   )
