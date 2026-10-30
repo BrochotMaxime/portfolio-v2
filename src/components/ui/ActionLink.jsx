@@ -9,7 +9,7 @@ function ActionLink({ children, to, href, external = false, variant = 'text', cl
       <span className="action-link__arrow" aria-hidden="true">
         →
       </span>
-      {external && <span className="sr-only">(opens in a new tab)</span>}
+      {href !== undefined && external && <span className="sr-only">(opens in a new tab)</span>}
     </>
   )
 

@@ -21,7 +21,7 @@ function Footer() {
           {/* Identity */}
           <div className="footer__identity">
             <p className="footer__name">Maxime Brochot</p>
-            <p className="footer__role">Développeur Web</p>
+            <p className="footer__role">Web Developer</p>
           </div>
 
           {/* Social links */}
@@ -37,7 +37,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/Maxime-Brochot/"
+              href="https://www.linkedin.com/in/maxime-brochot-646989171"
               className="footer__social-link"
               target="_blank"
               rel="noopener noreferrer"
