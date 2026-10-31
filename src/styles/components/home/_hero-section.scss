@@ -1,0 +1,67 @@
+@use '../../abstracts' as a;
+
+.hero {
+  padding-block: a.$space-7 a.$space-8;
+  border-bottom: 1px solid a.$color-border;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: a.$space-7;
+  }
+
+  &__name {
+    margin-bottom: a.$space-5;
+    color: a.$color-text-secondary;
+    font-size: a.$font-size-sm;
+  }
+
+  &__title {
+    margin-bottom: a.$space-5;
+    color: a.$color-text-primary;
+    font-family: a.$font-heading;
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__description {
+    max-width: 48ch;
+    margin-bottom: a.$space-6;
+    color: a.$color-text-secondary;
+  }
+
+  @include a.tablet {
+    padding-block: a.$space-8;
+
+    &__content {
+      margin-top: a.$space-8;
+    }
+
+    &__title {
+      font-size: clamp(3.5rem, 7vw, 5rem);
+    }
+  }
+
+  @include a.desktop {
+    padding-block: a.$space-9;
+
+    &__content {
+      margin-top: a.$space-8;
+    }
+
+    &__title {
+      font-size: clamp(4rem, 6vw, 6rem);
+
+      span {
+        display: inline;
+      }
+    }
+  }
+}
