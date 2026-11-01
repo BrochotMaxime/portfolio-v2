@@ -1,6 +1,7 @@
 import HeroSection from '../components/home/HeroSection'
 import SelectedProjectsSection from '../components/home/SelectedProjectsSection'
 import AboutSection from '../components/home/AboutSection'
+import ExpertiseSection from '../components/home/ExpertiseSection'
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <HeroSection />
       <SelectedProjectsSection />
       <AboutSection />
+      <ExpertiseSection />
     </>
   )
 }
