@@ -1,0 +1,63 @@
+@use '../../abstracts' as a;
+
+.contact-section {
+  padding-block: a.$space-7;
+  border-top: 1px solid a.$color-border;
+
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-6;
+    margin-top: a.$space-6;
+  }
+
+  &__title {
+    max-width: 16ch;
+    color: a.$color-text-primary;
+    font-family: a.$font-heading;
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  @include a.tablet {
+    padding-block: a.$space-8;
+
+    &__content {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: a.$space-7;
+    }
+
+    &__title {
+      max-width: 18ch;
+      font-size: clamp(2rem, 3vw, 2.5rem);
+    }
+  }
+
+  @include a.desktop {
+    padding-block: a.$space-9;
+
+    &__content {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: a.$space-8;
+      margin-top: a.$space-7;
+    }
+
+    &__title {
+      max-width: 18ch;
+      font-size: 2.5rem;
+    }
+
+    &__action {
+      justify-content: flex-start;
+    }
+  }
+}
