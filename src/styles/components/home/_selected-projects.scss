@@ -1,0 +1,55 @@
+@use '../../abstracts' as a;
+
+.selected-projects {
+  padding-block: a.$space-7 a.$space-8;
+  border-bottom: 1px solid a.$color-border;
+
+  &__intro {
+    margin-top: a.$space-6;
+  }
+
+  &__title {
+    margin-bottom: a.$space-5;
+    color: a.$color-text-primary;
+    font-family: a.$font-heading;
+  }
+
+  &__description {
+    max-width: 60ch;
+    color: a.$color-text-secondary;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: a.$space-8;
+    margin-top: a.$space-7;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: a.$space-7;
+  }
+
+  @include a.tablet {
+    padding-block: a.$space-8;
+
+    &__intro {
+      margin-top: a.$space-7;
+    }
+
+    &__list {
+      gap: a.$space-9;
+      margin-top: a.$space-8;
+    }
+  }
+
+  @include a.desktop {
+    padding-block: a.$space-9;
+
+    &__list {
+      margin-top: a.$space-8;
+    }
+  }
+}

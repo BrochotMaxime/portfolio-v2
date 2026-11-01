@@ -1,0 +1,132 @@
+@use '../../abstracts' as a;
+
+.project-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: a.$space-4;
+
+  // Project preview
+  &__image-link {
+    display: block;
+    min-width: 0;
+    border-radius: a.$radius-md;
+
+    &:focus-visible {
+      outline: 2px solid a.$color-accent;
+      outline-offset: 4px;
+    }
+  }
+
+  &__image-wrapper {
+    overflow: hidden;
+    border-radius: a.$radius-md;
+    background-color: a.$color-surface;
+    padding: a.$space-4;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  // Project information
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-3;
+    align-content: start;
+    min-width: 0;
+  }
+
+  &__title {
+    color: a.$color-text-primary;
+    font-family: a.$font-heading;
+  }
+
+  &__description {
+    color: a.$color-text-secondary;
+    font-size: a.$font-size-sm;
+    line-height: 1.5;
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: a.$space-2;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__technology {
+    color: a.$color-text-secondary;
+    font-size: a.$font-size-sm;
+
+    &:not(:first-child)::before {
+      content: '-';
+      margin-right: a.$space-3;
+    }
+  }
+
+  // Tablet and desktop layouts
+  @include a.tablet {
+    &--featured {
+      gap: a.$space-5;
+
+      .project-card__content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: a.$space-6;
+      }
+
+      .project-card__title,
+      .project-card__technologies {
+        grid-column: 1;
+      }
+
+      .project-card__description,
+      .action-link {
+        grid-column: 2;
+      }
+
+      .project-card__title,
+      .project-card__description {
+        grid-row: 1;
+      }
+
+      .project-card__technologies,
+      .action-link {
+        grid-row: 2;
+      }
+    }
+
+    &--standard,
+    &--reversed {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      gap: a.$space-6;
+    }
+
+    &--reversed {
+      .project-card__content {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .project-card__image-link {
+        grid-column: 2;
+        grid-row: 1;
+      }
+    }
+  }
+
+  @include a.desktop {
+    &--standard,
+    &--reversed {
+      gap: a.$space-8;
+    }
+  }
+}
