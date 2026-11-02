@@ -157,7 +157,7 @@ const projects = [
           title: 'Artisan categories',
           description: 'Browse artisans by category to discover professionals in different trades.',
           image: {
-            src: '/images/projects/trouve-ton-artisan/categories.webp',
+            src: '/images/projects/trouve-ton-artisan/artisans.webp',
             alt: 'Trouve ton artisan interface displaying artisan categories.',
           },
         },
