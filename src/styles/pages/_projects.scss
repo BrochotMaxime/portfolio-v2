@@ -1,0 +1,42 @@
+@use '../abstracts' as a;
+
+.projects-page {
+  padding-block: a.$space-8;
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: a.$space-4;
+    margin-bottom: a.$space-8;
+  }
+
+  &__title {
+    color: a.$color-text-primary;
+    font-family: a.$font-heading;
+  }
+
+  &__description {
+    color: a.$color-text-secondary;
+    line-height: 1.5;
+  }
+
+  &__list {
+    display: grid;
+    gap: a.$space-6;
+  }
+
+  .project-card__content > .action-link {
+    justify-self: end;
+  }
+
+  @include a.tablet {
+    .projects-page__list {
+      gap: a.$space-8;
+    }
+
+    .project-card__content > .action-link {
+      justify-self: start;
+    }
+  }
+}

@@ -34,6 +34,34 @@ const projects = [
     featured: true,
     layout: 'reversed',
   },
+  {
+    id: 'port-de-plaisance-russel',
+    slug: 'port-de-plaisance-russel',
+    title: 'Port de Plaisance Russel',
+    description: 'RESTful API developed during my web developer training to manage a marina.',
+    technologies: ['Node.js', 'Express', 'MongoDB'],
+    image: '/images/projects/port-de-plaisance-russel.webp',
+    imageAlt: 'Port de Plaisance Russel application showing its login interface',
+    featured: false,
+  },
+  {
+    id: 'tifosi',
+    slug: 'tifosi',
+    title: 'Tifosi',
+    description:
+      'Relational database project developed during my web developer training, focused on data modelling, SQL scripting, integrity constraints and advanced queries using MySQL.',
+    technologies: ['MySQL', 'SQL', 'Database Design'],
+    featured: false,
+  },
+  {
+    id: 'portfolio',
+    slug: 'portfolio',
+    title: 'Portfolio',
+    description:
+      'Personal developer portfolio built with React and SCSS, focused on maintainable architecture, accessibility and professional development practices.',
+    technologies: ['React', 'Vite', 'SCSS'],
+    featured: false,
+  },
 ]
 
 export default projects
