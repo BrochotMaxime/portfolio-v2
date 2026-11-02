@@ -2,27 +2,33 @@ import { Link } from 'react-router'
 
 import ActionLink from './ActionLink'
 
-function ProjectCard({ project }) {
-  const { slug, title, description, technologies, image, imageAlt, layout = 'standard' } = project
+function ProjectCard({ project, headingLevel = 3, layout }) {
+  const { slug, title, description, technologies, image, imageAlt } = project
 
-  const classes = ['project-card', `project-card--${layout}`].join(' ')
+  const Heading = headingLevel === 2 ? 'h2' : 'h3'
+
+  const resolvedLayout = layout ?? project.layout ?? 'standard'
+
+  const classes = ['project-card', `project-card--${resolvedLayout}`].join(' ')
 
   return (
     <article className={classes}>
       {/* Project preview */}
-      <Link
-        to={`/projects/${slug}`}
-        className="project-card__image-link"
-        aria-label={`View ${title} project`}
-      >
-        <div className="project-card__image-wrapper">
-          <img src={image} alt={imageAlt} className="project-card__image" loading="lazy" />
-        </div>
-      </Link>
+      {image && (
+        <Link
+          to={`/projects/${slug}`}
+          className="project-card__image-link"
+          aria-label={`View ${title} project`}
+        >
+          <div className="project-card__image-wrapper">
+            <img src={image} alt={imageAlt} className="project-card__image" loading="lazy" />
+          </div>
+        </Link>
+      )}
 
       {/* Project information */}
       <div className="project-card__content">
-        <h3 className="project-card__title">{title}</h3>
+        <Heading className="project-card__title">{title}</Heading>
 
         <p className="project-card__description">{description}</p>
 
