@@ -130,6 +130,7 @@ const projects = [
         'A full-stack web application helping users find and contact local artisans in the Auvergne-Rhône-Alpes region.',
 
       links: {
+        website: 'https://brochot-maxime-devoir-site-trouve-ton-tmpa.onrender.com/',
         github: 'https://github.com/BrochotMaxime/brochot-maxime-devoir-site-trouve-ton-artisan',
       },
 
@@ -241,6 +242,7 @@ const projects = [
         'An internal company carpooling application built with PHP and a lightweight MVC architecture.',
 
       links: {
+        website: 'https://maximebrochot.alwaysdata.net/',
         github: 'https://github.com/BrochotMaxime/brochot-maxime-devoir-touche-pas-au-klaxon',
       },
 
@@ -356,6 +358,7 @@ const projects = [
       summary: 'A marina management application built with Node.js, Express and MongoDB.',
 
       links: {
+        website: 'https://brochot-maxime-devoir-api-port-russel.onrender.com/',
         github: 'https://github.com/BrochotMaxime/brochot-maxime-devoir-api-port-russel',
       },
 
