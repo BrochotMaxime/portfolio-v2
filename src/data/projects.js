@@ -232,7 +232,7 @@ const projects = [
       'A PHP-based carpooling application helping employees organize trips between company agencies.',
     technologies: ['PHP', 'MariaDB', 'Sass'],
     image: '/images/projects/touche-pas-au-klaxon.webp',
-    imageAlt: 'Touche pas au klaxon application showing a table of available training journeys',
+    imageAlt: 'Touche pas au klaxon application displaying available carpooling trips',
     featured: true,
     layout: 'reversed',
 
@@ -559,6 +559,93 @@ const projects = [
       'Personal developer portfolio built with React and SCSS, focused on maintainable architecture, accessibility and professional development practices.',
     technologies: ['React', 'Vite', 'SCSS'],
     featured: false,
+
+    details: {
+      summary:
+        'A personal developer portfolio built with React, focused on responsive design, accessibility and maintainable code.',
+
+      links: {
+        github: 'https://github.com/BrochotMaxime/portfolio-v2',
+      },
+
+      context: {
+        title: 'The challenge',
+        description:
+          'A developer portfolio needs to present projects, technical skills and professional experience clearly while providing a consistent experience across different screen sizes.',
+      },
+
+      solution: {
+        title: 'The approach',
+        description:
+          'A responsive React application built with reusable components, structured project data and modular SCSS, following a design-driven development process.',
+      },
+
+      features: [
+        {
+          id: 'project-showcase',
+          title: 'Project showcase',
+          description:
+            'Present selected and additional development projects through reusable cards containing descriptions, technologies and project links.',
+        },
+        {
+          id: 'responsive-design',
+          title: 'Responsive design',
+          description:
+            'Adapt page layouts and navigation to mobile, tablet and desktop screens using responsive SCSS styles.',
+        },
+        {
+          id: 'reusable-components',
+          title: 'Reusable UI components',
+          description:
+            'Build a consistent interface using shared React components for project cards, navigation links, section labels and visual separators.',
+        },
+      ],
+
+      technicalApproach: {
+        title: 'Behind the project',
+        description:
+          'A closer look at the architecture, styling strategy and development workflow.',
+        items: [
+          {
+            title: 'Component-based architecture',
+            description:
+              'Organizing the React application into reusable components, page-level components and structured data, with React Router handling navigation.',
+          },
+          {
+            title: 'Modular SCSS',
+            description:
+              'Structuring styles into shared foundations, components and pages, using reusable design tokens and responsive breakpoints.',
+          },
+          {
+            title: 'Code quality & workflow',
+            description:
+              'Using ESLint and Prettier alongside an issue-based Git workflow with feature branches, validation checks and pull requests.',
+          },
+        ],
+      },
+
+      outcome: {
+        title: 'Results & learnings',
+        description: 'Progress and technical experience gained while developing the portfolio.',
+        items: [
+          {
+            title: 'Outcome',
+            description:
+              'Established a React application with shared layouts, reusable interface components and responsive project presentation pages, with further sections under development.',
+          },
+          {
+            title: 'Key learnings',
+            description:
+              'Improved my ability to translate Figma designs into responsive interfaces, organize a maintainable React codebase and follow a structured Git development workflow.',
+          },
+          {
+            title: 'Next steps',
+            description:
+              'Complete the remaining portfolio pages, refine accessibility and performance, and perform final testing before release.',
+          },
+        ],
+      },
+    },
   },
 ]
 
