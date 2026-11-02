@@ -345,11 +345,119 @@ const projects = [
     id: 'port-de-plaisance-russel',
     slug: 'port-de-plaisance-russel',
     title: 'Port de Plaisance Russel',
-    description: 'RESTful API developed during my web developer training to manage a marina.',
+    description:
+      'A Node.js application and REST API for managing marina users, catways and reservations.',
     technologies: ['Node.js', 'Express', 'MongoDB'],
     image: '/images/projects/port-de-plaisance-russel.webp',
     imageAlt: 'Port de Plaisance Russel application showing its login interface',
     featured: false,
+    
+    details: {
+      summary:
+        'A marina management application built with Node.js, Express and MongoDB.',
+    
+      links: {
+        github:
+          'https://github.com/BrochotMaxime/brochot-maxime-devoir-api-port-russel',
+      },
+    
+      heroImage: {
+        src: '/images/projects/port-de-plaisance-russel.webp',
+        alt: 'Port de Plaisance Russel application displaying its login interface.',
+      },
+    
+      context: {
+        title: 'The challenge',
+        description:
+          'Managing a marina involves maintaining information about docking facilities, users and reservations, while providing controlled access to administrative operations.',
+      },
+    
+      solution: {
+        title: 'The approach',
+        description:
+          'A Node.js and Express application providing CRUD operations for users, catways and reservations, with MongoDB for data storage and an EJS-based administration interface.',
+      },
+    
+      features: [
+        {
+          id: 'authentication',
+          title: 'Authentication & access',
+          description:
+            'Access the marina management application through a login interface with session-based authentication.',
+          image: {
+            src: '/images/projects/port-de-plaisance-russel/home.webp',
+            alt: 'Port de Plaisance Russel homepage displaying the application overview, login form and API documentation link.',
+          },
+        },
+        {
+          id: 'reservation-management',
+          title: 'Reservation management',
+          description:
+            'View and manage marina reservations, including assigned catways, boats, customers and reservation dates.',
+          image: {
+            src: '/images/projects/port-de-plaisance-russel/reservations.webp',
+            alt: 'Port de Plaisance Russel reservations table displaying catways, customers, boats and booking dates.',
+          },
+        },
+        {
+          id: 'api-documentation',
+          title: 'API documentation',
+          description:
+            'Explore the available API endpoints through interactive Swagger documentation.',
+          image: {
+            src: '/images/projects/port-de-plaisance-russel/swagger.webp',
+            alt: 'Swagger UI displaying documented API endpoints for marina management.',
+          },
+        },
+      ],
+    
+      technicalApproach: {
+        title: 'Behind the project',
+        description:
+          'A closer look at the API architecture, data management and authentication mechanisms.',
+        items: [
+          {
+            title: 'REST API with Express',
+            description:
+              'Building an API with Node.js and Express to manage users, catways and reservations through CRUD operations.',
+          },
+          {
+            title: 'MongoDB data management',
+            description:
+              'Using MongoDB and Mongoose to store and manage application data.',
+          },
+          {
+            title: 'Authentication & sessions',
+            description:
+              'Implementing user authentication with bcrypt for password hashing, express-session for session management and connect-mongo for session storage.',
+          },
+        ],
+      },
+    
+      outcome: {
+        title: 'Results & learnings',
+        description:
+          'Results and technical experience gained from developing a back-end application.',
+        items: [
+          {
+            title: 'Outcome',
+            description:
+              'Developed a marina management application with user authentication, CRUD operations for users, catways and reservations, an administration interface and Swagger API documentation.',
+          },
+          {
+            title: 'Key learnings',
+            description:
+              'Strengthened my understanding of REST API development, MongoDB data modelling, authentication, session management and API documentation.',
+          },
+          {
+            title: 'Next steps',
+            description:
+              'Potential improvements include expanding automated test coverage, refining API validation and improving deployment workflows.',
+          },
+        ],
+      },
+    },
+    
   },
   {
     id: 'tifosi',
