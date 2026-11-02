@@ -10,6 +10,108 @@ const projects = [
     imageAlt: 'Guild Wars Armory application showing the profession selection interface',
     featured: true,
     layout: 'featured',
+
+    details: {
+      summary: 'A material planning application for Guild Wars players.',
+
+      links: {
+        website: 'https://guildwarsarmory.com/',
+        github: 'https://github.com/BrochotMaxime/guild-wars-armor-planner',
+      },
+
+      heroImage: {
+        src: '/images/projects/guild-wars-armory.webp',
+        alt: 'Guild Wars Armory homepage showing the profession selection interface.',
+      },
+
+      context: {
+        title: 'The challenge',
+        description:
+          'Guild Wars armor crafting requires many different materials, making it difficult for players to track what they need and what they already own.',
+      },
+
+      solution: {
+        title: 'The approach',
+        description:
+          "A step-by-step planner that calculates armor requirements, accounts for the player's inventory and identifies missing materials.",
+      },
+
+      features: [
+        {
+          id: 'armor-selection',
+          title: 'Armor selection',
+          description:
+            'Browse armor sets by profession and campaign to find the one you want to craft.',
+          image: {
+            src: '/images/projects/guild-wars-armory/armor-selection.webp',
+            alt: 'Guild Wars Armory interface displaying available armor sets.',
+          },
+        },
+        {
+          id: 'requirements',
+          title: 'Requirements',
+          description: 'Explore the materials and gold required to craft your selected armor set.',
+          image: {
+            src: '/images/projects/guild-wars-armory/requirements.webp',
+            alt: 'Guild Wars Armory interface displaying armor crafting requirements.',
+          },
+        },
+        {
+          id: 'inventory',
+          title: 'Inventory & missing materials',
+          description:
+            'Enter the materials you already own to calculate what is still missing, including crafting requirements for rare materials.',
+          image: {
+            src: '/images/projects/guild-wars-armory/inventory.webp',
+            alt: 'Guild Wars Armory inventory interface showing owned and missing materials.',
+          },
+        },
+      ],
+
+      technicalApproach: {
+        title: 'Behind the project',
+        description: 'A closer look at the technical decisions behind Guild Wars Armory.',
+        items: [
+          {
+            title: 'Local data architecture',
+            description:
+              'Structured local data for armor sets, materials, professions and crafting recipes.',
+          },
+          {
+            title: 'Material calculation logic',
+            description:
+              'Calculating remaining requirements from armor costs, crafting recipes and player inventory.',
+          },
+          {
+            title: 'Component-based UI',
+            description:
+              'Organizing the multi-step workflow through reusable React components and state management.',
+          },
+        ],
+      },
+
+      outcome: {
+        title: 'Results & learnings',
+        description: 'Results, lessons learned and opportunities for improvement.',
+        items: [
+          {
+            title: 'Outcome',
+            description:
+              'Built a functional armor-planning application that helps Guild Wars players identify the materials they need and track what they are still missing.',
+          },
+          {
+            title: 'Key learnings',
+            description:
+              'Improved my ability to structure interconnected data, implement calculation logic and manage a multi-step workflow in React.',
+          },
+          {
+            title: 'Next steps',
+            description:
+              'Refine the user experience, expand the available data and improve the application based on player feedback.',
+          },
+        ],
+      },
+    },
   },
   {
     id: 'trouve-ton-artisan',
