@@ -228,12 +228,118 @@ const projects = [
     id: 'touche-pas-au-klaxon',
     slug: 'touche-pas-au-klaxon',
     title: 'Touche pas au klaxon',
-    description: 'A web application designed to manage and explore driving school training data.',
-    technologies: ['React', 'Vite', 'JavaScript'],
+    description:
+      'A PHP-based carpooling application helping employees organize trips between company agencies.',
+    technologies: ['PHP', 'MariaDB', 'Sass'],
     image: '/images/projects/touche-pas-au-klaxon.webp',
     imageAlt: 'Touche pas au klaxon application showing a table of available training journeys',
     featured: true,
     layout: 'reversed',
+
+    details: {
+      summary:
+        'An internal company carpooling application built with PHP and a lightweight MVC architecture.',
+
+      links: {
+        github: 'https://github.com/BrochotMaxime/brochot-maxime-devoir-touche-pas-au-klaxon',
+      },
+
+      heroImage: {
+        src: '/images/projects/touche-pas-au-klaxon.webp',
+        alt: 'Touche pas au klaxon application displaying available carpooling trips.',
+      },
+
+      context: {
+        title: 'The challenge',
+        description:
+          'Employees working across different company agencies need a way to organize shared trips, while administrators require tools to manage users, agencies and journeys.',
+      },
+
+      solution: {
+        title: 'The approach',
+        description:
+          'A role-based carpooling application where employees can create and manage trips, and administrators can oversee the platform through dedicated management tools.',
+      },
+
+      features: [
+        {
+          id: 'trip-management',
+          title: 'Trip management',
+          description:
+            'Browse available carpooling trips and create, edit or delete your own journeys.',
+          image: {
+            src: '/images/projects/touche-pas-au-klaxon/trip-management.webp',
+            alt: 'Touche pas au klaxon interface displaying available carpooling trips.',
+          },
+        },
+        {
+          id: 'administration',
+          title: 'Administration dashboard',
+          description:
+            'Manage users, agencies and trips through an administration interface with role-based access control.',
+          image: {
+            src: '/images/projects/touche-pas-au-klaxon/administration.webp',
+            alt: 'Touche pas au klaxon administration dashboard.',
+          },
+        },
+        {
+          id: 'trip-creation',
+          title: 'Trip creation',
+          description:
+            'Create a carpooling trip by entering contact information, selecting departure and arrival agencies, scheduling the journey and specifying available seats.',
+          image: {
+            src: '/images/projects/touche-pas-au-klaxon/trip-creation.webp',
+            alt: 'Touche pas au klaxon trip creation form with contact details, agency selection and journey scheduling fields.',
+          },
+        },
+      ],
+
+      technicalApproach: {
+        title: 'Behind the project',
+        description:
+          'A closer look at the architecture, security and development practices behind the application.',
+        items: [
+          {
+            title: 'Lightweight MVC architecture',
+            description:
+              'Organizing the PHP application into controllers, services, repositories, models and Twig templates to separate responsibilities and improve maintainability.',
+          },
+          {
+            title: 'Application security',
+            description:
+              'Implementing authentication, role-based authorization, CSRF protection, server-side validation and prepared SQL statements to protect application data.',
+          },
+          {
+            title: 'Testing & code quality',
+            description:
+              'Using PHPUnit for automated testing and PHPStan for static analysis, alongside Composer for dependency management.',
+          },
+        ],
+      },
+
+      outcome: {
+        title: 'Results & learnings',
+        description:
+          'Results and technical experience gained from developing a maintainable PHP application.',
+        items: [
+          {
+            title: 'Outcome',
+            description:
+              'Developed a role-based carpooling application with trip and agency management, an administration dashboard and a protected public demonstration mode.',
+          },
+          {
+            title: 'Key learnings',
+            description:
+              'Strengthened my understanding of MVC architecture, separation of concerns, application security, automated testing and relational database access with PDO.',
+          },
+          {
+            title: 'Next steps',
+            description:
+              'Continue refining the user experience, expanding automated test coverage and improving the demonstration environment.',
+          },
+        ],
+      },
+    },
   },
   {
     id: 'port-de-plaisance-russel',
