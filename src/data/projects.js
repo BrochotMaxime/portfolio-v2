@@ -351,33 +351,31 @@ const projects = [
     image: '/images/projects/port-de-plaisance-russel.webp',
     imageAlt: 'Port de Plaisance Russel application showing its login interface',
     featured: false,
-    
+
     details: {
-      summary:
-        'A marina management application built with Node.js, Express and MongoDB.',
-    
+      summary: 'A marina management application built with Node.js, Express and MongoDB.',
+
       links: {
-        github:
-          'https://github.com/BrochotMaxime/brochot-maxime-devoir-api-port-russel',
+        github: 'https://github.com/BrochotMaxime/brochot-maxime-devoir-api-port-russel',
       },
-    
+
       heroImage: {
         src: '/images/projects/port-de-plaisance-russel.webp',
         alt: 'Port de Plaisance Russel application displaying its login interface.',
       },
-    
+
       context: {
         title: 'The challenge',
         description:
           'Managing a marina involves maintaining information about docking facilities, users and reservations, while providing controlled access to administrative operations.',
       },
-    
+
       solution: {
         title: 'The approach',
         description:
           'A Node.js and Express application providing CRUD operations for users, catways and reservations, with MongoDB for data storage and an EJS-based administration interface.',
       },
-    
+
       features: [
         {
           id: 'authentication',
@@ -410,7 +408,7 @@ const projects = [
           },
         },
       ],
-    
+
       technicalApproach: {
         title: 'Behind the project',
         description:
@@ -423,8 +421,7 @@ const projects = [
           },
           {
             title: 'MongoDB data management',
-            description:
-              'Using MongoDB and Mongoose to store and manage application data.',
+            description: 'Using MongoDB and Mongoose to store and manage application data.',
           },
           {
             title: 'Authentication & sessions',
@@ -433,7 +430,7 @@ const projects = [
           },
         ],
       },
-    
+
       outcome: {
         title: 'Results & learnings',
         description:
@@ -457,16 +454,102 @@ const projects = [
         ],
       },
     },
-    
   },
   {
     id: 'tifosi',
     slug: 'tifosi',
     title: 'Tifosi',
     description:
-      'Relational database project developed during my web developer training, focused on data modelling, SQL scripting, integrity constraints and advanced queries using MySQL.',
+      'A relational database project for an Italian street-food restaurant, built with MySQL and SQL.',
     technologies: ['MySQL', 'SQL', 'Database Design'],
     featured: false,
+
+    details: {
+      summary:
+        'A relational database designed to manage the products and business data of an Italian street-food restaurant.',
+
+      links: {
+        github: 'https://github.com/BrochotMaxime/brochot-maxime-devoir-base-de-donnees-tifosi',
+      },
+
+      context: {
+        title: 'The challenge',
+        description:
+          'An Italian street-food restaurant needs a structured way to organize its products, ingredients, menus, customers and the relationships between them.',
+      },
+
+      solution: {
+        title: 'The approach',
+        description:
+          'A MySQL relational database supported by SQL scripts for schema creation, sample data insertion and data verification.',
+      },
+
+      features: [
+        {
+          id: 'database-schema',
+          title: 'Relational database schema',
+          description:
+            'Design a relational structure to organize focaccias, ingredients, drinks, brands, menus and customers.',
+        },
+        {
+          id: 'sample-data',
+          title: 'Sample data',
+          description:
+            'Populate the database with sample records and establish relationships between the different entities.',
+        },
+        {
+          id: 'sql-queries',
+          title: 'SQL queries',
+          description:
+            'Execute a set of ten SQL queries to retrieve and verify information stored in the database.',
+        },
+      ],
+
+      technicalApproach: {
+        title: 'Behind the project',
+        description: 'A closer look at the relational database design and SQL implementation.',
+        items: [
+          {
+            title: 'Relational data modelling',
+            description:
+              'Structuring restaurant data into related tables representing products, ingredients, brands, menus and customers.',
+          },
+          {
+            title: 'Database initialization',
+            description:
+              'Using SQL scripts to create the database, configure its dedicated user and initialize the schema.',
+          },
+          {
+            title: 'Data manipulation & queries',
+            description:
+              'Writing SQL scripts to insert sample data and execute ten queries against the resulting database.',
+          },
+        ],
+      },
+
+      outcome: {
+        title: 'Results & learnings',
+        description:
+          'Results and technical experience gained from developing a relational database.',
+        items: [
+          {
+            title: 'Outcome',
+            description:
+              'Created a MySQL database for an Italian street-food restaurant, including its relational schema, sample data and ten SQL verification queries.',
+          },
+          {
+            title: 'Key learnings',
+            description:
+              'Practiced relational data modelling, SQL schema creation, data insertion and querying across related entities.',
+          },
+          {
+            title: 'Next steps',
+            description:
+              'Potential improvements include expanding the query set, adding automated database checks and documenting the relational schema in greater detail.',
+          },
+        ],
+      },
+    },
   },
   {
     id: 'portfolio',
