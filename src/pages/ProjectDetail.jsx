@@ -1,7 +1,10 @@
 import { useParams } from 'react-router'
 
+import NotFound from './NotFound'
+
 import Container from '../components/layout/Container'
 import ActionLink from '../components/ui/ActionLink'
+import Divider from '../components/ui/Divider'
 import SectionLabel from '../components/ui/SectionLabel'
 
 import projects from '../data/projects'
@@ -12,12 +15,7 @@ function ProjectDetail() {
   const project = projects.find((project) => project.slug === slug)
 
   if (!project) {
-    return (
-      <Container>
-        <h1>Project not found</h1>
-        <p>The requested project does not exist.</p>
-      </Container>
-    )
+    return <NotFound />
   }
 
   const { title, technologies, details } = project
@@ -40,19 +38,21 @@ function ProjectDetail() {
               ))}
             </ul>
 
-            <div className="project-detail__links">
-              {links?.website && (
-                <ActionLink href={links.website} external>
-                  View live website
-                </ActionLink>
-              )}
+            {(links?.website || links?.github) && (
+              <div className="project-detail__links">
+                {links?.website && (
+                  <ActionLink href={links.website} external>
+                    View live website
+                  </ActionLink>
+                )}
 
-              {links?.github && (
-                <ActionLink href={links.github} external>
-                  View GitHub repository
-                </ActionLink>
-              )}
-            </div>
+                {links?.github && (
+                  <ActionLink href={links.github} external>
+                    View GitHub repository
+                  </ActionLink>
+                )}
+              </div>
+            )}
           </div>
 
           {heroImage && (
@@ -62,6 +62,8 @@ function ProjectDetail() {
           )}
         </section>
 
+        <Divider className="project-detail__section-divider" />
+
         <div className="project-detail__story">
           <section className="project-detail__context">
             <SectionLabel number="02" label="CONTEXT" />
@@ -70,6 +72,8 @@ function ProjectDetail() {
             <p>{details.context.description}</p>
           </section>
 
+          <Divider className="project-detail__story-divider" />
+
           <section className="project-detail__solution">
             <SectionLabel number="03" label="SOLUTION" />
 
@@ -77,6 +81,8 @@ function ProjectDetail() {
             <p>{details.solution.description}</p>
           </section>
         </div>
+
+        <Divider className="project-detail__section-divider" />
 
         <section className="project-detail__features">
           <SectionLabel number="04" label="FEATURES" />
@@ -108,6 +114,8 @@ function ProjectDetail() {
           </div>
         </section>
 
+        <Divider className="project-detail__section-divider" />
+
         <section className="project-detail__technical">
           <SectionLabel number="05" label="TECHNICAL APPROACH" />
 
@@ -127,6 +135,8 @@ function ProjectDetail() {
           </div>
         </section>
 
+        <Divider className="project-detail__section-divider" />
+
         <section className="project-detail__outcome">
           <SectionLabel number="06" label="OUTCOME" />
 
@@ -143,6 +153,8 @@ function ProjectDetail() {
             ))}
           </div>
         </section>
+
+        <Divider className="project-detail__section-divider" />
 
         <div className="project-detail__footer">
           <ActionLink to="/projects" variant="text">

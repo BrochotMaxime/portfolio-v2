@@ -1,0 +1,340 @@
+@use '../abstracts' as a;
+
+.project-detail {
+  padding-block: a.$space-8;
+
+  // Shared section styles
+  &__overview,
+  &__context,
+  &__solution {
+    min-width: 0;
+  }
+
+  &__overview > .section-label,
+  &__context > .section-label,
+  &__solution > .section-label {
+    margin-bottom: a.$space-5;
+  }
+
+  &__section-divider {
+    margin-block: a.$space-7;
+  }
+
+  &__section-title {
+    margin-bottom: a.$space-4;
+  }
+
+  &__section-description {
+    max-width: 48rem;
+    color: a.$color-text-secondary;
+  }
+
+  // Project overview
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: a.$space-4;
+  }
+
+  &__title {
+    overflow-wrap: anywhere;
+  }
+
+  &__summary {
+    max-width: 48rem;
+    color: a.$color-text-secondary;
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: a.$space-2;
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: a.$space-2 a.$space-3;
+      border: 1px solid a.$color-border;
+      border-radius: a.$radius-full;
+
+      color: a.$color-text-secondary;
+      font-family: a.$font-mono;
+      font-size: a.$font-size-xs;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: a.$space-4;
+    margin-top: a.$space-2;
+  }
+
+  &__hero,
+  &__feature-image {
+    overflow: hidden;
+    border: 1px solid a.$color-border;
+    border-radius: a.$radius-lg;
+    background-color: a.$color-surface;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__hero {
+    margin-top: a.$space-7;
+  }
+
+  // Context & Solution
+  &__story {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-6;
+  }
+
+  &__story-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  &__context,
+  &__solution {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h2 {
+      margin-bottom: a.$space-4;
+    }
+
+    > p:not(.section-label) {
+      max-width: 36rem;
+      color: a.$color-text-secondary;
+    }
+  }
+
+  // Features
+  &__features,
+  &__technical,
+  &__outcome {
+    > .section-label {
+      margin-bottom: a.$space-5;
+    }
+  }
+
+  &__feature-list {
+    display: grid;
+    gap: a.$space-7;
+    margin-top: a.$space-7;
+  }
+
+  &__feature {
+    min-width: 0;
+  }
+
+  &__feature--with-image {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-5;
+  }
+
+  &__feature-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: a.$space-3;
+    min-width: 0;
+
+    h3 {
+      overflow-wrap: anywhere;
+    }
+
+    p {
+      max-width: 36rem;
+      color: a.$color-text-secondary;
+    }
+  }
+
+  // Features without images
+  &__feature--text-only {
+    padding: a.$space-5;
+    border: 1px solid a.$color-border;
+    border-radius: a.$radius-lg;
+    background-color: a.$color-surface;
+  }
+
+  // Technical Approach
+  &__technical-list {
+    margin-top: a.$space-7;
+    border-top: 1px solid a.$color-border;
+  }
+
+  &__technical-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-3;
+    padding-block: a.$space-5;
+    border-bottom: 1px solid a.$color-border;
+
+    h3 {
+      font-size: a.$font-size-xl;
+    }
+
+    p {
+      color: a.$color-text-secondary;
+    }
+  }
+
+  // Outcome
+  &__outcome-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: a.$space-4;
+    margin-top: a.$space-7;
+  }
+
+  &__outcome-item {
+    flex: 1 1 100%;
+    min-width: 0;
+    padding: a.$space-5;
+    border: 1px solid a.$color-border;
+    border-radius: a.$radius-lg;
+    background-color: a.$color-surface;
+
+    h3 {
+      margin-bottom: a.$space-3;
+      font-size: a.$font-size-xl;
+    }
+
+    p {
+      color: a.$color-text-secondary;
+    }
+  }
+
+  // Footer CTA
+  &__footer {
+    display: flex;
+    justify-content: center;
+
+    .action-link {
+      font-family: a.$font-heading;
+      font-size: a.$font-size-lg;
+      font-weight: a.$font-weight-semibold;
+      text-align: center;
+    }
+  }
+
+  // Tablet
+  @include a.tablet {
+    &__intro {
+      gap: a.$space-5;
+    }
+
+    &__links {
+      gap: a.$space-6;
+    }
+
+    &__story {
+      grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+      gap: a.$space-6;
+    }
+
+    &__story-divider {
+      width: 1px;
+      height: 100%;
+    }
+
+    &__feature--with-image {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      gap: a.$space-6;
+    }
+
+    &__feature--with-image:nth-child(even) &__feature-image {
+      order: 2;
+    }
+
+    &__feature--with-image:nth-child(even) &__feature-content {
+      order: 1;
+    }
+
+    &__feature-list:has(> .project-detail__feature--text-only) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: a.$space-4;
+    }
+
+    &__technical-item {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+      gap: a.$space-6;
+      align-items: start;
+    }
+
+    &__outcome-item {
+      flex: 0 1 calc((100% - #{a.$space-4}) / 2);
+    }
+  }
+
+  // Desktop
+  @include a.desktop {
+    padding-block: a.$space-9;
+
+    &__section-divider {
+      margin-block: a.$space-8;
+    }
+
+    &__hero {
+      margin-top: a.$space-8;
+    }
+
+    &__story {
+      gap: a.$space-8;
+    }
+
+    &__feature-list {
+      gap: a.$space-8;
+      margin-top: a.$space-8;
+    }
+
+    &__feature--with-image {
+      gap: a.$space-8;
+    }
+
+    &__feature-list:has(> .project-detail__feature--text-only) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: a.$space-5;
+    }
+
+    &__feature--text-only {
+      padding: a.$space-6;
+    }
+
+    &__technical-list {
+      margin-top: a.$space-8;
+    }
+
+    &__technical-item {
+      gap: a.$space-8;
+      padding-block: a.$space-6;
+    }
+
+    &__outcome-list {
+      gap: a.$space-5;
+      margin-top: a.$space-8;
+    }
+
+    &__outcome-item {
+      flex: 0 1 calc((100% - 2 * #{a.$space-5}) / 3);
+      padding: a.$space-6;
+    }
+
+    &__footer .action-link {
+      font-size: a.$font-size-xl;
+    }
+  }
+}

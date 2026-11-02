@@ -216,11 +216,6 @@ const projects = [
             description:
               'Practiced building a React application with a separate Express back-end and a MySQL database managed through Sequelize.',
           },
-          {
-            title: 'Next steps',
-            description:
-              'Potential improvements include further usability testing, accessibility refinements and deployment of the complete application.',
-          },
         ],
       },
     },
@@ -334,11 +329,6 @@ const projects = [
             description:
               'Strengthened my understanding of MVC architecture, separation of concerns, application security, automated testing and relational database access with PDO.',
           },
-          {
-            title: 'Next steps',
-            description:
-              'Continue refining the user experience, expanding automated test coverage and improving the demonstration environment.',
-          },
         ],
       },
     },
@@ -449,11 +439,6 @@ const projects = [
             description:
               'Strengthened my understanding of REST API development, MongoDB data modelling, authentication, session management and API documentation.',
           },
-          {
-            title: 'Next steps',
-            description:
-              'Potential improvements include expanding automated test coverage, refining API validation and improving deployment workflows.',
-          },
         ],
       },
     },
@@ -544,11 +529,6 @@ const projects = [
             title: 'Key learnings',
             description:
               'Practiced relational data modelling, SQL schema creation, data insertion and querying across related entities.',
-          },
-          {
-            title: 'Next steps',
-            description:
-              'Potential improvements include expanding the query set, adding automated database checks and documenting the relational schema in greater detail.',
           },
         ],
       },
