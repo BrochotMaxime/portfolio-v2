@@ -1,12 +1,15 @@
 import { Outlet } from 'react-router'
 
-import Footer from './Footer'
+import ScrollToTop from './ScrollToTop'
 import Header from './Header'
+import Footer from './Footer'
 
 // Shared layout for all application pages
 function MainLayout() {
   return (
     <div className="main-layout">
+      <ScrollToTop />
+
       {/* Global navigation */}
       <Header />
 
