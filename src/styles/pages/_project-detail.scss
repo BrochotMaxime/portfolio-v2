@@ -265,8 +265,14 @@
     }
 
     &__feature-list:has(> .project-detail__feature--text-only) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: a.$space-4;
+
+      > .project-detail__feature--text-only {
+        flex: 0 1 calc((100% - #{a.$space-4}) / 2);
+      }
     }
 
     &__technical-item {
@@ -306,8 +312,11 @@
     }
 
     &__feature-list:has(> .project-detail__feature--text-only) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: a.$space-5;
+
+      > .project-detail__feature--text-only {
+        flex-basis: calc((100% - 2 * #{a.$space-5}) / 3);
+      }
     }
 
     &__feature--text-only {
