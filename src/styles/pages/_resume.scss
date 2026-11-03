@@ -1,0 +1,148 @@
+@use '../abstracts' as a;
+
+.resume-page {
+  // Shared section styles
+  &__section {
+    padding-block: a.$space-7;
+
+    .section-label {
+      margin-bottom: a.$space-5;
+    }
+  }
+
+  &__section-title {
+    margin-bottom: a.$space-6;
+  }
+
+  // Page introduction
+  &__title {
+    margin-bottom: a.$space-4;
+    overflow-wrap: anywhere;
+  }
+
+  &__description {
+    max-width: 48rem;
+    color: a.$color-text-secondary;
+  }
+
+  // Experience and education
+  &__entries {
+    border-top: 1px solid a.$color-border;
+  }
+
+  &__entry {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-3;
+    padding-block: a.$space-5;
+    border-bottom: 1px solid a.$color-border;
+  }
+
+  &__period {
+    color: a.$color-text-secondary;
+    font-family: a.$font-mono;
+    font-size: a.$font-size-sm;
+    line-height: a.$line-height-normal;
+  }
+
+  &__entry-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: a.$space-2;
+    min-width: 0;
+
+    h3 {
+      font-size: a.$font-size-xl;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  &__organization {
+    color: a.$color-text-primary;
+    font-size: a.$font-size-sm;
+    line-height: a.$line-height-normal;
+  }
+
+  &__entry-description {
+    max-width: 60ch;
+    color: a.$color-text-secondary;
+    font-size: a.$font-size-sm;
+    line-height: a.$line-height-relaxed;
+  }
+
+  // Technical skills
+  &__skills-list {
+    border-top: 1px solid a.$color-border;
+  }
+
+  &__skill-category {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-3;
+    padding-block: a.$space-5;
+    border-bottom: 1px solid a.$color-border;
+
+    h3 {
+      font-size: a.$font-size-lg;
+      font-weight: a.$font-weight-semibold;
+    }
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: a.$space-2 a.$space-3;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      color: a.$color-text-secondary;
+      font-size: a.$font-size-sm;
+      line-height: a.$line-height-normal;
+    }
+  }
+
+  // Tablet
+  @include a.tablet {
+    &__section {
+      padding-block: a.$space-8;
+    }
+
+    &__section-title {
+      margin-bottom: a.$space-7;
+    }
+
+    &__entry {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+      gap: a.$space-6;
+      padding-block: a.$space-6;
+    }
+
+    &__skill-category {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+      gap: a.$space-6;
+      padding-block: a.$space-6;
+    }
+  }
+
+  // Desktop
+  @include a.desktop {
+    &__section {
+      padding-block: a.$space-9;
+    }
+
+    &__entry {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+      gap: a.$space-8;
+    }
+
+    &__skill-category {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+      gap: a.$space-8;
+    }
+  }
+}
