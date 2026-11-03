@@ -1,0 +1,195 @@
+@use '../abstracts' as a;
+
+.about-page {
+  // Shared section styles
+  &__section {
+    padding-block: a.$space-7;
+
+    .section-label {
+      margin-bottom: a.$space-5;
+    }
+  }
+
+  &__section-title {
+    margin-bottom: a.$space-6;
+  }
+
+  // Introduction and background
+  &__title {
+    margin-bottom: a.$space-4;
+    overflow-wrap: anywhere;
+  }
+
+  &__subtitle {
+    max-width: 48rem;
+    color: a.$color-text-secondary;
+  }
+
+  &__background-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-5;
+    margin-top: a.$space-6;
+  }
+
+  &__image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 12rem;
+    padding: a.$space-5;
+    border-radius: a.$radius-lg;
+    background-color: a.$color-surface;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: a.$radius-md;
+    object-fit: cover;
+  }
+
+  &__background {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: a.$space-4;
+    min-width: 0;
+
+    h2 {
+      font-size: a.$font-size-xl;
+    }
+
+    p {
+      max-width: 60ch;
+      color: a.$color-text-secondary;
+    }
+  }
+
+  // Development approach
+  &__approach-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-3;
+  }
+
+  &__approach-card {
+    min-width: 0;
+    padding: a.$space-5;
+    border-radius: a.$radius-lg;
+    background-color: a.$color-surface;
+
+    h3 {
+      margin-bottom: a.$space-2;
+      font-size: a.$font-size-base;
+      font-weight: a.$font-weight-semibold;
+    }
+
+    p {
+      color: a.$color-text-secondary;
+      font-size: a.$font-size-sm;
+      line-height: a.$line-height-normal;
+    }
+  }
+
+  // Personal qualities
+  &__qualities-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-5;
+  }
+
+  &__quality {
+    min-width: 0;
+    padding-bottom: a.$space-5;
+    border-bottom: 1px solid a.$color-border;
+
+    h3 {
+      margin-bottom: a.$space-4;
+      font-size: a.$font-size-base;
+      font-weight: a.$font-weight-semibold;
+    }
+
+    p {
+      color: a.$color-text-secondary;
+      font-size: a.$font-size-sm;
+      line-height: a.$line-height-normal;
+    }
+  }
+
+  // Contact CTA
+  &__contact-description {
+    max-width: 48rem;
+    color: a.$color-text-secondary;
+  }
+
+  &__contact-link {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: a.$space-5;
+  }
+
+  // Tablet
+  @include a.tablet {
+    &__section {
+      padding-block: a.$space-8;
+    }
+
+    &__background-layout {
+      gap: a.$space-6;
+      margin-top: a.$space-7;
+    }
+
+    &__image-wrapper {
+      min-height: 18rem;
+      padding: a.$space-6;
+    }
+
+    &__approach-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: a.$space-4;
+    }
+
+    &__qualities-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: a.$space-6;
+      row-gap: a.$space-6;
+    }
+
+    &__contact-link {
+      margin-top: a.$space-6;
+    }
+  }
+
+  // Desktop
+  @include a.desktop {
+    &__section {
+      padding-block: a.$space-9;
+    }
+
+    &__background-layout {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: a.$space-6;
+    }
+
+    &__image-wrapper {
+      min-height: 20rem;
+    }
+
+    &__background {
+      gap: a.$space-5;
+    }
+
+    &__approach-list {
+      gap: a.$space-6;
+    }
+
+    &__qualities-list {
+      column-gap: a.$space-8;
+      row-gap: a.$space-7;
+    }
+  }
+}
