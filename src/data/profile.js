@@ -126,7 +126,6 @@ const profile = {
           qualification: 'Web & Mobile Web Development Training',
           institution: 'Centre Européen de Formation',
           location: '',
-          status: 'In progress',
           description:
             'Theoretical coursework and assignments completed. Professional internship and final examination pending.',
         },
@@ -136,7 +135,6 @@ const profile = {
           qualification: 'Engineering Degree - High-Performance Materials',
           institution: 'SIGMA Clermont',
           location: 'Clermont-Ferrand, France',
-          status: 'Completed',
           description: '',
         },
         {
@@ -145,7 +143,6 @@ const profile = {
           qualification: 'Preparatory Classes - Physics & Chemistry',
           institution: 'Lycée Aristide Briand',
           location: 'Saint-Nazaire, France',
-          status: 'Completed',
           description: '',
         },
       ],
