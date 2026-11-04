@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { SiGithub } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 
+import site from '../../data/site'
 import Container from './Container'
 
 const footerLinks = [
@@ -20,14 +21,14 @@ function Footer() {
         <div className="footer__inner">
           {/* Identity */}
           <div className="footer__identity">
-            <p className="footer__name">Maxime Brochot</p>
-            <p className="footer__role">Web Developer</p>
+            <p className="footer__name">{site.owner}</p>
+            <p className="footer__role">{site.role}</p>
           </div>
 
           {/* Social links */}
           <div className="footer__socials">
             <a
-              href="https://github.com/BrochotMaxime"
+              href={site.socialLinks.github}
               className="footer__social-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -37,7 +38,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/maxime-brochot-646989171"
+              href={site.socialLinks.linkedin}
               className="footer__social-link"
               target="_blank"
               rel="noopener noreferrer"
@@ -58,7 +59,7 @@ function Footer() {
 
           {/* Copyright */}
           <p className="footer__copyright">
-            © {new Date().getFullYear()} Maxime Brochot. All rights reserved.
+            © {new Date().getFullYear()} {site.owner}. All rights reserved.
           </p>
         </div>
       </Container>

@@ -1,12 +1,14 @@
 import ProfilePicture from '/images/profile-picture.webp?url'
 
+import site from './site'
+
 const resume = {
   contact: {
-    name: 'Maxime Brochot',
+    name: site.owner,
     location: 'Lille, France',
-    email: 'brochot.max@gmail.com',
-    github: 'https://github.com/BrochotMaxime',
-    portfolio: 'https://maxime-brochot.dev',
+    email: site.email,
+    github: site.socialLinks.github,
+    portfolio: site.portfolio,
     photo: ProfilePicture,
   },
 
