@@ -1,0 +1,66 @@
+@use '../abstracts' as a;
+
+.contact-page {
+  // Main section
+  &__section {
+    padding-block: a.$space-7;
+
+    .section-label {
+      margin-bottom: a.$space-5;
+    }
+  }
+
+  // Introduction
+  &__title {
+    margin-bottom: a.$space-4;
+    overflow-wrap: anywhere;
+  }
+
+  &__description {
+    max-width: 48rem;
+    color: a.$color-text-secondary;
+  }
+
+  // Contact layout
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-6;
+    margin-top: a.$space-6;
+  }
+
+  // Contact form
+  &__form {
+    min-width: 0;
+  }
+
+  // Contact methods
+  &__methods {
+    min-width: 0;
+  }
+
+  // Tablet
+  @include a.tablet {
+    &__section {
+      padding-block: a.$space-8;
+    }
+
+    &__content {
+      gap: a.$space-7;
+    }
+  }
+
+  // Desktop
+  @include a.desktop {
+    &__section {
+      padding-block: a.$space-9;
+    }
+
+    &__content {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      align-items: start;
+      gap: a.$space-8;
+      margin-top: a.$space-7;
+    }
+  }
+}

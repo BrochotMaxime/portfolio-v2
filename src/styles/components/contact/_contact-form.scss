@@ -1,0 +1,141 @@
+@use '../../abstracts' as a;
+
+.contact-form {
+  &__title {
+    margin-bottom: a.$space-3;
+    font-size: a.$font-size-xl;
+  }
+
+  &__description {
+    margin-bottom: a.$space-5;
+    color: a.$color-text-secondary;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: a.$space-5;
+  }
+
+  &__fields {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-4;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: a.$space-2;
+    min-width: 0;
+  }
+
+  &__label {
+    font-size: a.$font-size-sm;
+    font-weight: a.$font-weight-semibold;
+  }
+
+  &__required {
+    margin-left: 0.25rem;
+  }
+
+  &__required-note {
+    color: a.$color-text-secondary;
+    font-size: a.$font-size-sm;
+  }
+
+  &__input {
+    width: 100%;
+    min-width: 0;
+    padding: a.$space-3 a.$space-4;
+    border: 1px solid a.$color-border;
+    border-radius: a.$radius-md;
+    background-color: a.$color-surface;
+    color: a.$color-text-primary;
+    font: inherit;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &::placeholder {
+      color: a.$color-text-secondary;
+      opacity: 0.8;
+    }
+
+    &:hover {
+      border-color: a.$color-text-secondary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid a.$color-text-primary;
+      outline-offset: 2px;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 10rem;
+  }
+
+  &__privacy {
+    color: a.$color-text-secondary;
+    font-size: a.$font-size-sm;
+    line-height: a.$line-height-normal;
+
+    a {
+      color: a.$color-text-primary;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+
+      &:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 3px;
+      }
+    }
+  }
+
+  &__submit {
+    align-self: flex-start;
+    padding: a.$space-3 a.$space-5;
+    border: 1px solid a.$color-border;
+    border-radius: a.$radius-md;
+    background-color: a.$color-surface;
+    color: a.$color-text-primary;
+    font: inherit;
+    font-weight: a.$font-weight-semibold;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: a.$color-text-primary;
+      color: a.$color-surface;
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 3px;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  &__availability {
+    color: a.$color-text-secondary;
+    font-size: a.$font-size-sm;
+  }
+
+  @include a.tablet {
+    &__fields {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &__field--full {
+      grid-column: 1 / -1;
+    }
+  }
+}
