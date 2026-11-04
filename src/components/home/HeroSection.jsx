@@ -1,6 +1,9 @@
 import Container from '../layout/Container'
+
 import ActionLink from '../ui/ActionLink'
 import SectionLabel from '../ui/SectionLabel'
+
+import site from '../../data/site'
 
 function HeroSection() {
   return (
@@ -9,7 +12,7 @@ function HeroSection() {
         <SectionLabel number="01" label="INTRO" />
 
         <div className="hero__content">
-          <p className="hero__name">MAXIME BROCHOT</p>
+          <p className="hero__name">{site.owner.toUpperCase()}</p>
 
           <h1 id="hero-title" className="hero__title">
             <span>WEB</span> <span>DEVELOPER</span>
