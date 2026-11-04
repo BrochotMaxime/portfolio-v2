@@ -20,7 +20,16 @@ function Resume() {
 
           <p className="resume-page__description">{introduction.description}</p>
 
-          {/* Resume download will be implemented in issue #28 */}
+          <div className="resume-page__download">
+            <a
+              href="/documents/maxime-brochot-resume-en.pdf"
+              download="maxime-brochot-resume-en.pdf"
+              type="application/pdf"
+              className="resume-page__download-link"
+            >
+              Download resume (PDF)
+            </a>
+          </div>
         </Container>
       </section>
 

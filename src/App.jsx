@@ -7,6 +7,7 @@ import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
 import About from './pages/About'
 import Resume from './pages/Resume'
+import ResumeDocumentPage from './pages/ResumeDocumentPage'
 import Contact from './pages/Contact'
 import Legal from './pages/Legal'
 import NotFound from './pages/NotFound'
@@ -28,6 +29,9 @@ function App() {
         {/* Fallback page for unknown routes */}
         <Route path="*" element={<NotFound />} />
       </Route>
+
+      <Route path="resume/fr" element={<ResumeDocumentPage language="fr" />} />
+      <Route path="resume/en" element={<ResumeDocumentPage language="en" />} />
     </Routes>
   )
 }

@@ -25,6 +25,38 @@
     color: a.$color-text-secondary;
   }
 
+  &__download {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: a.$space-4;
+
+    margin-top: a.$space-6;
+  }
+
+  &__download-link {
+    display: inline-flex;
+    align-items: center;
+
+    color: a.$color-accent;
+    font-size: a.$font-size-sm;
+    font-weight: a.$font-weight-medium;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: a.$color-text-primary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid a.$color-accent;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+  }
+
   // Experience and education
   &__entries {
     border-top: 1px solid a.$color-border;
