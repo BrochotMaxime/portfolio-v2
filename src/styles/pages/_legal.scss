@@ -1,0 +1,101 @@
+@use '../abstracts' as a;
+
+.legal-page {
+  &__section {
+    padding-block: a.$space-7;
+
+    .section-label {
+      margin-bottom: a.$space-5;
+    }
+  }
+
+  &__title {
+    margin-bottom: a.$space-4;
+    overflow-wrap: anywhere;
+  }
+
+  &__description {
+    max-width: 60ch;
+    color: a.$color-text-secondary;
+  }
+
+  &__updated {
+    margin-top: a.$space-4;
+    color: a.$color-text-secondary;
+    font-size: a.$font-size-sm;
+  }
+
+  &__section-title {
+    margin-bottom: a.$space-5;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: a.$space-4;
+    max-width: 75ch;
+
+    p {
+      color: a.$color-text-secondary;
+      line-height: a.$line-height-relaxed;
+    }
+
+    a {
+      color: a.$color-accent;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+
+      &:hover {
+        text-decoration-thickness: 2px;
+      }
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: a.$space-3;
+    margin-top: a.$space-3;
+  }
+
+  &__detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: a.$space-2;
+
+    dt {
+      color: a.$color-text-secondary;
+      font-size: a.$font-size-sm;
+    }
+
+    dd {
+      min-width: 0;
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: a.$color-accent;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+  }
+
+  @include a.tablet {
+    &__section {
+      padding-block: a.$space-8;
+    }
+
+    &__detail {
+      grid-template-columns: 10rem minmax(0, 1fr);
+      align-items: baseline;
+      gap: a.$space-4;
+    }
+  }
+
+  @include a.desktop {
+    &__section {
+      padding-block: a.$space-9;
+    }
+  }
+}
