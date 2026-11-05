@@ -62,6 +62,7 @@ const contact = {
         type: 'text',
         placeholder: 'What is your message about?',
         required: false,
+        fullWidth: true,
       },
       {
         id: 'message',
@@ -70,6 +71,7 @@ const contact = {
         type: 'textarea',
         placeholder: 'Tell me about your project or question...',
         required: true,
+        fullWidth: true,
       },
     ],
 

@@ -53,6 +53,7 @@
     background-color: a.$color-surface;
     color: a.$color-text-primary;
     font: inherit;
+
     transition:
       border-color 0.2s ease,
       box-shadow 0.2s ease;
@@ -70,11 +71,27 @@
       outline: 2px solid a.$color-text-primary;
       outline-offset: 2px;
     }
+
+    &[aria-invalid='true'] {
+      border-color: #e57373;
+    }
   }
 
   &__textarea {
     resize: vertical;
     min-height: 10rem;
+  }
+
+  &__error {
+    color: #e57373;
+    font-size: a.$font-size-sm;
+    line-height: a.$line-height-normal;
+  }
+
+  &__feedback {
+    color: a.$color-text-secondary;
+    font-size: a.$font-size-sm;
+    line-height: a.$line-height-normal;
   }
 
   &__privacy {
