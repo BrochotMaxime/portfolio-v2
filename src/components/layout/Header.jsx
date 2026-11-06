@@ -94,7 +94,7 @@ function Header() {
       if (
         currentScrollY <= HIDE_THRESHOLD ||
         isMenuOpen ||
-        headerRef.current?.contains(document.activeElement)
+        headerRef.current?.querySelector(':focus-visible')
       ) {
         upwardScrollRef.current = 0
         setIsHeaderVisible(true)
