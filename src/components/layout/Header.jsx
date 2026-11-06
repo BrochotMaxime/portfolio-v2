@@ -21,6 +21,12 @@ function Header() {
   // The menu is open only on its original route
   const isMenuOpen = menuOpenPath === location.pathname
 
+  // Control header visibility based on scroll direction
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true)
+  const lastScrollYRef = useRef(0)
+  const upwardScrollRef = useRef(0)
+  const headerRef = useRef(null)
+
   // References for keyboard focus management
   const menuButtonRef = useRef(null)
   const firstLinkRef = useRef(null)
@@ -28,6 +34,7 @@ function Header() {
   // Toggle the mobile menu
   function toggleMenu() {
     setMenuOpenPath(isMenuOpen ? null : location.pathname)
+    setIsHeaderVisible(true)
   }
 
   // Close the mobile menu
@@ -72,10 +79,57 @@ function Header() {
     }
   }, [])
 
+  // Hide the header on downward scroll and show it on upward scroll
+  useEffect(() => {
+    const HIDE_THRESHOLD = 100
+    const SHOW_THRESHOLD = 10
+
+    function handleScroll() {
+      const currentScrollY = Math.max(0, window.scrollY)
+      const previousScrollY = lastScrollYRef.current
+      const delta = currentScrollY - previousScrollY
+
+      lastScrollYRef.current = currentScrollY
+
+      if (
+        currentScrollY <= HIDE_THRESHOLD ||
+        isMenuOpen ||
+        headerRef.current?.contains(document.activeElement)
+      ) {
+        upwardScrollRef.current = 0
+        setIsHeaderVisible(true)
+        return
+      }
+
+      if (delta > 0) {
+        upwardScrollRef.current = 0
+        setIsHeaderVisible(false)
+      } else if (delta < 0) {
+        upwardScrollRef.current += Math.abs(delta)
+
+        if (upwardScrollRef.current >= SHOW_THRESHOLD) {
+          setIsHeaderVisible(true)
+        }
+      }
+    }
+
+    lastScrollYRef.current = Math.max(0, window.scrollY)
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [isMenuOpen])
+
   return (
     <>
       {/* Header and navigation */}
-      <header className="header" onKeyDown={handleMenuKeyDown}>
+      <header
+        ref={headerRef}
+        className={`header${isHeaderVisible ? '' : ' header--hidden'}`}
+        onKeyDown={handleMenuKeyDown}
+      >
         <Container>
           <div className="header__inner">
             {/* Brand link */}
