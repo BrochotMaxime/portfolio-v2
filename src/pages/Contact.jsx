@@ -17,7 +17,7 @@ function Contact() {
           {/* Introduction */}
           <SectionLabel number="01" label="CONTACT" />
 
-          <h1 id="contact-title" className="contact-page__title">
+          <h1 id="contact-title" className="contact-page__title" tabIndex={-1}>
             {introduction.title}
           </h1>
 

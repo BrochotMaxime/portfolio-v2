@@ -12,6 +12,10 @@ function MainLayout() {
     <div className="main-layout">
       <ScrollToTop />
 
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
+
       {/* Global navigation */}
       <Header />
 

@@ -1,5 +1,6 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Turnstile } from '@marsidev/react-turnstile'
+
 import contact from '../../data/contact'
 import { validateContact } from '../../utils/contactValidation'
 
@@ -8,12 +9,25 @@ const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY
 export default function ContactForm() {
   const { form } = contact
 
+  const formRef = useRef(null)
   const turnstileRef = useRef(null)
+  const pendingFocusRef = useRef(null)
 
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
   const [feedback, setFeedback] = useState('')
   const [turnstileToken, setTurnstileToken] = useState('')
+  const [turnstileError, setTurnstileError] = useState('')
+
+  useEffect(() => {
+    if (!pendingFocusRef.current) return
+
+    const field = formRef.current?.elements.namedItem(pendingFocusRef.current)
+
+    field?.focus()
+
+    pendingFocusRef.current = null
+  }, [errors])
 
   function handleChange(event) {
     const { name } = event.target
@@ -54,12 +68,20 @@ export default function ContactForm() {
     setStatus('idle')
 
     if (Object.keys(validationErrors).length > 0) {
+      pendingFocusRef.current = Object.keys(validationErrors)[0]
       return
     }
 
     if (!turnstileToken) {
       setStatus('error')
-      setFeedback('Please complete the security verification.')
+
+      if (turnstileError) {
+        // The specific error is already displayed beside Turnstile.
+        setFeedback('')
+      } else {
+        setFeedback('Please complete the security verification.')
+      }
+
       return
     }
 
@@ -81,6 +103,7 @@ export default function ContactForm() {
 
       if (!response.ok) {
         if (response.status === 400 && result.fields) {
+          pendingFocusRef.current = Object.keys(result.fields)[0] ?? null
           setErrors(result.fields)
         }
 
@@ -93,6 +116,7 @@ export default function ContactForm() {
       setFeedback(form.feedback.success)
 
       formElement.reset()
+      setTurnstileError('')
     } catch (error) {
       console.error('Contact form submission error:', error)
 
@@ -105,7 +129,9 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate>
+    <form ref={formRef} className="contact-form" onSubmit={handleSubmit} noValidate>
+      <p className="contact-form__required-note">Fields marked with * are required.</p>
+
       <div className="contact-form__fields">
         {form.fields.map((field) => {
           const hasError = Boolean(errors[field.name])
@@ -165,12 +191,27 @@ export default function ContactForm() {
             options={{
               theme: 'auto',
             }}
-            onSuccess={setTurnstileToken}
-            onExpire={() => setTurnstileToken('')}
-            onError={() => setTurnstileToken('')}
+            onSuccess={(token) => {
+              setTurnstileToken(token)
+              setTurnstileError('')
+            }}
+            onExpire={() => {
+              setTurnstileToken('')
+              setTurnstileError('Security verification expired. Please try again.')
+            }}
+            onError={() => {
+              setTurnstileToken('')
+              setTurnstileError('Security verification failed. Please try again.')
+            }}
           />
         ) : (
           <p className="contact-form__error">Security verification is unavailable.</p>
+        )}
+
+        {turnstileError && (
+          <p className="contact-form__error" role="alert">
+            {turnstileError}
+          </p>
         )}
       </div>
 

@@ -132,6 +132,7 @@ function Header() {
         ref={headerRef}
         className={`header${isHeaderVisible ? '' : ' header--hidden'}`}
         onKeyDown={handleMenuKeyDown}
+        onFocusCapture={() => setIsHeaderVisible(true)}
       >
         <Container>
           <div className="header__inner">

@@ -25,7 +25,6 @@ function ContactMethods({ methods }) {
                 className="contact-methods__link"
                 target={isExternal ? '_blank' : undefined}
                 rel={isExternal ? 'noopener noreferrer' : undefined}
-                aria-label={isExternal ? `${method.label} (opens in a new tab)` : undefined}
               >
                 <span className="contact-methods__icon">{Icon && <Icon aria-hidden="true" />}</span>
 
@@ -33,6 +32,8 @@ function ContactMethods({ methods }) {
                   <span className="contact-methods__label">{method.label}</span>
                   <span className="contact-methods__text">{method.text}</span>
                 </span>
+
+                {isExternal && <span className="sr-only">(opens in a new tab)</span>}
               </a>
             </li>
           )

@@ -82,11 +82,6 @@ a {
   &:hover {
     text-decoration: underline;
   }
-
-  &:focus-visible {
-    outline: 2px solid a.$color-accent;
-    outline-offset: 3px;
-  }
 }
 
 p a {

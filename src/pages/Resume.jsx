@@ -14,7 +14,7 @@ function Resume() {
         <Container>
           <SectionLabel number="01" label="RESUME" />
 
-          <h1 id="resume-title" className="resume-page__title">
+          <h1 id="resume-title" className="resume-page__title" tabIndex={-1}>
             {introduction.title}
           </h1>
 

@@ -14,7 +14,7 @@ function HeroSection() {
         <div className="hero__content">
           <p className="hero__name">{site.owner.toUpperCase()}</p>
 
-          <h1 id="hero-title" className="hero__title">
+          <h1 id="hero-title" className="hero__title" tabIndex={-1}>
             <span>WEB</span> <span>DEVELOPER</span>
           </h1>
 

@@ -30,6 +30,12 @@ body {
   background-color: a.$color-accent;
 }
 
+/* Visible keyboard focus */
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid a.$color-accent;
+  outline-offset: 3px;
+}
+
 /* Visually hidden, accessible to screen readers */
 .sr-only {
   position: absolute;
@@ -46,5 +52,13 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

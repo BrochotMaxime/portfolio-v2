@@ -35,10 +35,12 @@ function ResumeDocument({ language = 'en' }) {
 
               <a href={contact.github} target="_blank" rel="noopener noreferrer">
                 {contact.github.replace(/^https?:\/\//, '')}
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
 
               <a href={contact.portfolio} target="_blank" rel="noopener noreferrer">
                 {contact.portfolio.replace(/^https?:\/\//, '')}
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
             </address>
           </section>

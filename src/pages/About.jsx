@@ -15,7 +15,7 @@ function About() {
         <Container>
           <SectionLabel number="01" label="ABOUT" />
 
-          <h1 id="about-title" className="about-page__title">
+          <h1 id="about-title" className="about-page__title" tabIndex={-1}>
             {introduction.title}
           </h1>
 

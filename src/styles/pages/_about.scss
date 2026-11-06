@@ -16,6 +16,7 @@
 
   // Introduction and background
   &__title {
+    max-width: 48rem;
     margin-bottom: a.$space-4;
     overflow-wrap: anywhere;
   }
@@ -29,6 +30,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: a.$space-5;
+    max-width: 48rem;
     margin-top: a.$space-6;
   }
 
@@ -66,7 +68,6 @@
     }
 
     p {
-      max-width: 60ch;
       color: a.$color-text-secondary;
     }
   }

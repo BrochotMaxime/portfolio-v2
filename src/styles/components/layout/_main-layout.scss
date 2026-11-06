@@ -7,3 +7,30 @@
     flex: 1;
   }
 }
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+
+  padding: 0.75rem 1rem;
+  background-color: #f5f7fa;
+  color: #111318;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+
+  transform: translateY(calc(-100% - 2rem));
+  transition: transform 0.2s ease;
+
+  &:focus-visible {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+}
