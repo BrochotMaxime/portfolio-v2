@@ -32,6 +32,8 @@
     margin-top: a.$space-6;
   }
 
+  // To restore when an image is available
+  /*
   &__image-wrapper {
     display: flex;
     align-items: center;
@@ -50,6 +52,7 @@
     border-radius: a.$radius-md;
     object-fit: cover;
   }
+  */
 
   &__background {
     display: flex;
@@ -169,11 +172,14 @@
       padding-block: a.$space-9;
     }
 
+    // To restore when an image is available
+    /*
     &__background-layout {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       align-items: start;
       gap: a.$space-6;
     }
+    */
 
     &__image-wrapper {
       min-height: 20rem;

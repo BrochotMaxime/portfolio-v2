@@ -183,7 +183,10 @@ export default function ContactForm() {
       </button>
 
       {feedback && (
-        <p className="contact-form__feedback" role={status === 'success' ? 'status' : 'alert'}>
+        <p
+          className={`contact-form__feedback contact-form__feedback--${status}`}
+          role={status === 'success' ? 'status' : 'alert'}
+        >
           {feedback}
         </p>
       )}

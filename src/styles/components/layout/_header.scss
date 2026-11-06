@@ -1,10 +1,18 @@
 @use '../../abstracts' as a;
 
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 20;
+
   background-color: a.$color-background;
-  border-bottom: 1px solid a.$color-border;
+
+  transform: translateY(0);
+  transition: transform 0.25s ease;
+
+  &--hidden {
+    transform: translateY(-100%);
+  }
 
   &__inner {
     display: flex;
@@ -188,6 +196,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .header,
   .header__link,
   .header__mobile-nav,
   .header-overlay {

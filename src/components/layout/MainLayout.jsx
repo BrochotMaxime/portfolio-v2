@@ -4,6 +4,8 @@ import ScrollToTop from './ScrollToTop'
 import Header from './Header'
 import Footer from './Footer'
 
+import Divider from '../ui/Divider'
+
 // Shared layout for all application pages
 function MainLayout() {
   return (
@@ -17,6 +19,8 @@ function MainLayout() {
       <main id="main-content" className="main-layout__content">
         <Outlet />
       </main>
+
+      <Divider />
 
       {/* Global footer */}
       <Footer />

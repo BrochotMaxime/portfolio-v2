@@ -1,5 +1,112 @@
 const projects = [
   {
+    id: 'trouve-ton-artisan',
+    slug: 'trouve-ton-artisan',
+    title: 'Trouve ton artisan',
+    description:
+      'A full-stack web application helping users find artisans by category or name in the Auvergne-Rhône-Alpes region.',
+    technologies: ['React', 'Express', 'MySQL'],
+    image: '/images/projects/trouve-ton-artisan.webp',
+    imageAlt: 'Trouve ton artisan website showing its homepage and artisan search interface',
+    featured: true,
+    layout: 'featured',
+
+    details: {
+      summary:
+        'A full-stack web application helping users find and contact local artisans in the Auvergne-Rhône-Alpes region.',
+
+      links: {
+        website: 'https://brochot-maxime-devoir-site-trouve-ton-tmpa.onrender.com/',
+        github: 'https://github.com/BrochotMaxime/brochot-maxime-devoir-site-trouve-ton-artisan',
+      },
+
+      heroImage: {
+        src: '/images/projects/trouve-ton-artisan.webp',
+        alt: 'Trouve ton artisan application displaying a list of local artisans.',
+      },
+
+      context: {
+        title: 'The challenge',
+        description:
+          'Finding a suitable local artisan requires access to clear information about available professionals, their specialties and how to contact them.',
+      },
+
+      solution: {
+        title: 'The approach',
+        description:
+          'A full-stack application that organizes artisans by category, provides name-based search, and allows users to view detailed profiles and contact artisans.',
+      },
+
+      features: [
+        {
+          id: 'categories',
+          title: 'Artisan categories',
+          description: 'Browse artisans by category to discover professionals in different trades.',
+          image: {
+            src: '/images/projects/trouve-ton-artisan/artisans.webp',
+            alt: 'Trouve ton artisan interface displaying artisan categories.',
+          },
+        },
+        {
+          id: 'search',
+          title: 'Artisan search',
+          description: 'Search for an artisan by name to quickly find a specific professional.',
+          image: {
+            src: '/images/projects/trouve-ton-artisan/search.webp',
+            alt: 'Trouve ton artisan interface displaying artisan search results.',
+          },
+        },
+        {
+          id: 'artisan-detail',
+          title: 'Artisan profiles',
+          description: 'View detailed information about an artisan and access a contact form.',
+          image: {
+            src: '/images/projects/trouve-ton-artisan/artisan-detail.webp',
+            alt: 'Trouve ton artisan interface displaying an artisan profile and contact form.',
+          },
+        },
+      ],
+
+      technicalApproach: {
+        title: 'Behind the project',
+        description: 'A closer look at the full-stack architecture and technical decisions.',
+        items: [
+          {
+            title: 'React front-end',
+            description:
+              'Building the user interface with React, React Router and Sass, using Vite for development and React Helmet Async for page metadata.',
+          },
+          {
+            title: 'Express API',
+            description: 'Using Node.js and Express as the back-end application layer.',
+          },
+          {
+            title: 'Relational data architecture',
+            description:
+              'Using MySQL and Sequelize to manage relational data for artisans, categories and specialties.',
+          },
+        ],
+      },
+
+      outcome: {
+        title: 'Results & learnings',
+        description: 'Results and technical experience gained from this training project.',
+        items: [
+          {
+            title: 'Outcome',
+            description:
+              'Developed a full-stack application allowing users to browse artisan categories, search by name, view profiles and contact artisans.',
+          },
+          {
+            title: 'Key learnings',
+            description:
+              'Practiced building a React application with a separate Express back-end and a MySQL database managed through Sequelize.',
+          },
+        ],
+      },
+    },
+  },
+  {
     id: 'guild-wars-armory',
     slug: 'guild-wars-armory',
     title: 'Guild Wars Armory',
@@ -9,7 +116,7 @@ const projects = [
     image: '/images/projects/guild-wars-armory.webp',
     imageAlt: 'Guild Wars Armory application showing the profession selection interface',
     featured: true,
-    layout: 'featured',
+    layout: 'standard',
 
     details: {
       summary: 'A material planning application for Guild Wars players.',
@@ -108,113 +215,6 @@ const projects = [
             title: 'Next steps',
             description:
               'Refine the user experience, expand the available data and improve the application based on player feedback.',
-          },
-        ],
-      },
-    },
-  },
-  {
-    id: 'trouve-ton-artisan',
-    slug: 'trouve-ton-artisan',
-    title: 'Trouve ton artisan',
-    description:
-      'A full-stack web application helping users find artisans by category or name in the Auvergne-Rhône-Alpes region.',
-    technologies: ['React', 'Express', 'MySQL'],
-    image: '/images/projects/trouve-ton-artisan.webp',
-    imageAlt: 'Trouve ton artisan website showing its homepage and artisan search interface',
-    featured: true,
-    layout: 'standard',
-
-    details: {
-      summary:
-        'A full-stack web application helping users find and contact local artisans in the Auvergne-Rhône-Alpes region.',
-
-      links: {
-        website: 'https://brochot-maxime-devoir-site-trouve-ton-tmpa.onrender.com/',
-        github: 'https://github.com/BrochotMaxime/brochot-maxime-devoir-site-trouve-ton-artisan',
-      },
-
-      heroImage: {
-        src: '/images/projects/trouve-ton-artisan.webp',
-        alt: 'Trouve ton artisan application displaying a list of local artisans.',
-      },
-
-      context: {
-        title: 'The challenge',
-        description:
-          'Finding a suitable local artisan requires access to clear information about available professionals, their specialties and how to contact them.',
-      },
-
-      solution: {
-        title: 'The approach',
-        description:
-          'A full-stack application that organizes artisans by category, provides name-based search, and allows users to view detailed profiles and contact artisans.',
-      },
-
-      features: [
-        {
-          id: 'categories',
-          title: 'Artisan categories',
-          description: 'Browse artisans by category to discover professionals in different trades.',
-          image: {
-            src: '/images/projects/trouve-ton-artisan/artisans.webp',
-            alt: 'Trouve ton artisan interface displaying artisan categories.',
-          },
-        },
-        {
-          id: 'search',
-          title: 'Artisan search',
-          description: 'Search for an artisan by name to quickly find a specific professional.',
-          image: {
-            src: '/images/projects/trouve-ton-artisan/search.webp',
-            alt: 'Trouve ton artisan interface displaying artisan search results.',
-          },
-        },
-        {
-          id: 'artisan-detail',
-          title: 'Artisan profiles',
-          description: 'View detailed information about an artisan and access a contact form.',
-          image: {
-            src: '/images/projects/trouve-ton-artisan/artisan-detail.webp',
-            alt: 'Trouve ton artisan interface displaying an artisan profile and contact form.',
-          },
-        },
-      ],
-
-      technicalApproach: {
-        title: 'Behind the project',
-        description: 'A closer look at the full-stack architecture and technical decisions.',
-        items: [
-          {
-            title: 'React front-end',
-            description:
-              'Building the user interface with React, React Router and Sass, using Vite for development and React Helmet Async for page metadata.',
-          },
-          {
-            title: 'Express API',
-            description: 'Using Node.js and Express as the back-end application layer.',
-          },
-          {
-            title: 'Relational data architecture',
-            description:
-              'Using MySQL and Sequelize to manage relational data for artisans, categories and specialties.',
-          },
-        ],
-      },
-
-      outcome: {
-        title: 'Results & learnings',
-        description: 'Results and technical experience gained from this training project.',
-        items: [
-          {
-            title: 'Outcome',
-            description:
-              'Developed a full-stack application allowing users to browse artisan categories, search by name, view profiles and contact artisans.',
-          },
-          {
-            title: 'Key learnings',
-            description:
-              'Practiced building a React application with a separate Express back-end and a MySQL database managed through Sequelize.',
           },
         ],
       },
