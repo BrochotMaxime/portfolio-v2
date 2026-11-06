@@ -1,6 +1,10 @@
 @use '../../abstracts' as a;
 
 .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: a.$space-5;
+
   &__title {
     margin-bottom: a.$space-3;
     font-size: a.$font-size-xl;
@@ -9,12 +13,6 @@
   &__description {
     margin-bottom: a.$space-5;
     color: a.$color-text-secondary;
-  }
-
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: a.$space-5;
   }
 
   &__fields {
@@ -92,6 +90,14 @@
     color: a.$color-text-secondary;
     font-size: a.$font-size-sm;
     line-height: a.$line-height-normal;
+
+    &--success {
+      color: #81c995;
+    }
+
+    &--error {
+      color: #e57373;
+    }
   }
 
   &__privacy {
@@ -121,6 +127,7 @@
     font: inherit;
     font-weight: a.$font-weight-semibold;
     cursor: pointer;
+
     transition:
       background-color 0.2s ease,
       border-color 0.2s ease;

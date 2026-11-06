@@ -22,11 +22,14 @@ function About() {
           <p className="about-page__subtitle">{introduction.subtitle}</p>
 
           <div className="about-page__background-layout">
+            {/* To restore when an image is available */}
+            {/* 
             <div className="about-page__image-wrapper">
               {introduction.image && (
                 <img src={introduction.image} alt="" className="about-page__image" />
               )}
-            </div>
+            </div> 
+            */}
 
             <div className="about-page__background">
               <h2>{background.title}</h2>

@@ -39,4 +39,8 @@
       justify-self: start;
     }
   }
+
+  @include a.desktop {
+    padding-block: a.$space-9;
+  }
 }
