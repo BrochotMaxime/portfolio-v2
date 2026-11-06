@@ -1,6 +1,9 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { NavLink, useLocation } from 'react-router'
+
 import Container from './Container'
+
+import Divider from '../ui/Divider'
 
 // Main navigation links
 const navigationItems = [
@@ -195,6 +198,8 @@ function Header() {
             </div>
           </Container>
         </nav>
+
+        <Divider />
       </header>
 
       {/* Background overlay used to close the mobile menu */}
