@@ -15,6 +15,12 @@
     color: a.$color-text-secondary;
   }
 
+  &__required-note {
+    margin-bottom: a.$space-4;
+    color: a.$color-text-secondary;
+    font-size: a.$font-size-sm;
+  }
+
   &__fields {
     display: grid;
     grid-template-columns: minmax(0, 1fr);

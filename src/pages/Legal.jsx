@@ -14,7 +14,7 @@ function Legal() {
         <Container>
           <SectionLabel number="01" label="LEGAL" />
 
-          <h1 id="legal-title" className="legal-page__title">
+          <h1 id="legal-title" className="legal-page__title" tabIndex={-1}>
             {introduction.title}
           </h1>
 
@@ -48,6 +48,7 @@ function Legal() {
                   <p key={link.href}>
                     <a href={link.href} target="_blank" rel="noopener noreferrer">
                       {link.label}
+                      <span className="sr-only"> (opens in a new tab)</span>
                     </a>
                   </p>
                 ))}
@@ -92,6 +93,7 @@ function Legal() {
                       <dd>
                         <a href={hosting.website} target="_blank" rel="noopener noreferrer">
                           {hosting.website}
+                          <span className="sr-only"> (opens in a new tab)</span>
                         </a>
                       </dd>
                     </div>

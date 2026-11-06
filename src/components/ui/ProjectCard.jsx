@@ -41,7 +41,7 @@ function ProjectCard({ project, headingLevel = 3, layout }) {
         </ul>
 
         <ActionLink to={`/projects/${slug}`} variant="text">
-          View project
+          View project <span className="sr-only">: {title}</span>
         </ActionLink>
       </div>
     </article>

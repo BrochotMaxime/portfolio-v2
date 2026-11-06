@@ -37,7 +37,9 @@ function Projects() {
         <header className="projects-page__intro">
           <SectionLabel number="01" label="PROJECTS" />
 
-          <h1 className="projects-page__title">Selected &amp; other work</h1>
+          <h1 className="projects-page__title" tabIndex={-1}>
+            Selected &amp; other work
+          </h1>
 
           <p className="projects-page__description">
             A collection of web applications and projects I've built.

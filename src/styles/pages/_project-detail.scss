@@ -171,6 +171,8 @@
   // Technical Approach
   &__technical-list {
     margin-top: a.$space-7;
+    padding: 0;
+    list-style: none;
     border-top: 1px solid a.$color-border;
   }
 
@@ -197,6 +199,8 @@
     justify-content: center;
     gap: a.$space-4;
     margin-top: a.$space-7;
+    padding: 0;
+    list-style: none;
   }
 
   &__outcome-item {

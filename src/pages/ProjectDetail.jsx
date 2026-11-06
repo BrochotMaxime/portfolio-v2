@@ -28,7 +28,9 @@ function ProjectDetail() {
           <SectionLabel number="01" label="PROJECT OVERVIEW" />
 
           <div className="project-detail__intro">
-            <h1 className="project-detail__title">{title}</h1>
+            <h1 className="project-detail__title" tabIndex={-1}>
+              {title}
+            </h1>
 
             <p className="project-detail__summary">{summary}</p>
 
@@ -125,14 +127,14 @@ function ProjectDetail() {
             {details.technicalApproach.description}
           </p>
 
-          <div className="project-detail__technical-list">
+          <ul className="project-detail__technical-list">
             {details.technicalApproach.items.map((item) => (
-              <div key={item.title} className="project-detail__technical-item">
+              <li key={item.title} className="project-detail__technical-item">
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
 
         <Divider className="project-detail__section-divider" />
