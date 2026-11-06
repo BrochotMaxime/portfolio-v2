@@ -17,8 +17,7 @@
 
   transition:
     background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+    color 0.2s ease;
 
   &:hover {
     text-decoration: none;
@@ -41,10 +40,10 @@
   &--primary {
     padding: a.$space-2 a.$space-3;
     color: a.$color-text-primary;
-    background-color: a.$color-accent;
-
+    background-color: a.$color-button-primary;
+  
     &:hover {
-      background-color: #2563eb;
+      background-color: a.$color-button-primary-hover;
     }
   }
 
