@@ -6,9 +6,15 @@ import ContactSection from '../components/home/ContactSection'
 
 import Divider from '../components/ui/Divider'
 
+import PageMetadata from '../components/seo/PageMetadata'
+
+import { PAGE_METADATA } from '../data/seo'
+
 function Home() {
   return (
     <>
+      <PageMetadata {...PAGE_METADATA.home} />
+
       <HeroSection />
       <Divider />
       <SelectedProjectsSection />

@@ -2,8 +2,36 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/((?!api(?:/|$)|src(?:/|$)|@vite(?:/|$)|@react-refresh(?:/|$)|node_modules(?:/|$)|@fs(?:/|$)|@id(?:/|$)|__vite_ping(?:/|$)|.*\\.[^/]+$).*)",
-      "destination": "/index.html"
+      "source": "/projects/:slug",
+      "destination": "/projects/:slug/index.html"
+    },
+    {
+      "source": "/projects",
+      "destination": "/projects/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/resume/fr",
+      "destination": "/resume/fr/index.html"
+    },
+    {
+      "source": "/resume/en",
+      "destination": "/resume/en/index.html"
+    },
+    {
+      "source": "/resume",
+      "destination": "/resume/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/legal",
+      "destination": "/legal/index.html"
     }
   ]
 }

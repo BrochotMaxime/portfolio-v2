@@ -1,15 +1,21 @@
-import Container from '../components/layout/Container'
 import ActionLink from '../components/ui/ActionLink'
 import Divider from '../components/ui/Divider'
 import SectionLabel from '../components/ui/SectionLabel'
 
+import Container from '../components/layout/Container'
+
+import PageMetadata from '../components/seo/PageMetadata'
+
 import profile from '../data/profile'
+import { PAGE_METADATA } from '../data/seo'
 
 function About() {
   const { introduction, background, approach, qualities, contact } = profile.about
 
   return (
     <div className="about-page">
+      <PageMetadata {...PAGE_METADATA.about} />
+
       {/* Introduction and background */}
       <section className="about-page__section about-page__intro" aria-labelledby="about-title">
         <Container>

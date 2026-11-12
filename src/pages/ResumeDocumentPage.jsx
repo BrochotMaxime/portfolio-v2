@@ -1,24 +1,37 @@
 import { useEffect } from 'react'
 
 import ResumeDocument from '../components/resume/ResumeDocument'
+import PageMetadata from '../components/seo/PageMetadata'
 
 function ResumeDocumentPage({ language }) {
   useEffect(() => {
-    const previousTitle = document.title
-
     document.documentElement.lang = language
-    document.title = language === 'fr' ? 'CV | Développeur web' : 'Resume | Web Developer'
 
     return () => {
       document.documentElement.lang = 'en'
-      document.title = previousTitle
     }
   }, [language])
 
+  const isFrench = language === 'fr'
+
+  const metadata = {
+    title: isFrench ? 'CV | Maxime Brochot' : 'Resume | Maxime Brochot',
+    description: isFrench
+      ? 'Curriculum vitae de Maxime Brochot, développeur web.'
+      : 'Curriculum vitae of Maxime Brochot, web developer.',
+    path: `/resume/${language}`,
+    noindex: true,
+    image: null,
+  }
+
   return (
-    <main className="resume-document-page">
-      <ResumeDocument language={language} />
-    </main>
+    <>
+      <PageMetadata {...metadata} />
+
+      <main className="resume-document-page">
+        <ResumeDocument language={language} />
+      </main>
+    </>
   )
 }
 

@@ -2,10 +2,15 @@ import { useParams } from 'react-router'
 
 import NotFound from './NotFound'
 
+import PageMetadata from '../components/seo/PageMetadata'
+
 import Container from '../components/layout/Container'
+
 import ActionLink from '../components/ui/ActionLink'
 import Divider from '../components/ui/Divider'
 import SectionLabel from '../components/ui/SectionLabel'
+
+import { getProjectMetadata } from '../data/seo'
 
 import projects from '../data/projects'
 
@@ -18,11 +23,15 @@ function ProjectDetail() {
     return <NotFound />
   }
 
+  const metadata = getProjectMetadata(project)
+
   const { title, technologies, details } = project
   const { summary, links, heroImage } = details
 
   return (
     <div className="project-detail">
+      <PageMetadata {...metadata} />
+
       <Container>
         <section className="project-detail__overview">
           <SectionLabel number="01" label="PROJECT OVERVIEW" />

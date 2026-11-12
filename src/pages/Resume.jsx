@@ -1,14 +1,20 @@
-import Container from '../components/layout/Container'
 import Divider from '../components/ui/Divider'
 import SectionLabel from '../components/ui/SectionLabel'
 
+import Container from '../components/layout/Container'
+
+import PageMetadata from '../components/seo/PageMetadata'
+
 import profile from '../data/profile'
+import { PAGE_METADATA } from '../data/seo'
 
 function Resume() {
   const { introduction, experience, education, skills } = profile.resume
 
   return (
     <div className="resume-page">
+      <PageMetadata {...PAGE_METADATA.resume} />
+
       {/* Page introduction */}
       <section className="resume-page__section" aria-labelledby="resume-title">
         <Container>

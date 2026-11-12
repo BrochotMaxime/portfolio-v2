@@ -1,17 +1,22 @@
+import SectionLabel from '../components/ui/SectionLabel'
+
 import Container from '../components/layout/Container'
 
-import SectionLabel from '../components/ui/SectionLabel'
+import PageMetadata from '../components/seo/PageMetadata'
 
 import ContactMethods from '../components/contact/ContactMethods'
 import ContactForm from '../components/contact/ContactForm'
 
 import contact from '../data/contact'
+import { PAGE_METADATA } from '../data/seo'
 
 function Contact() {
   const { introduction, methods, form } = contact
 
   return (
     <div className="contact-page">
+      <PageMetadata {...PAGE_METADATA.contact} />
+
       <section className="contact-page__section" aria-labelledby="contact-title">
         <Container>
           {/* Introduction */}
