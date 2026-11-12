@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-v2-ashy-rho.vercel.app/sitemap.xml

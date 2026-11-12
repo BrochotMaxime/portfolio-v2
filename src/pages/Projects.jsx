@@ -3,9 +3,13 @@ import { Fragment } from 'react'
 import Divider from '../components/ui/Divider'
 import ProjectCard from '../components/ui/ProjectCard'
 import SectionLabel from '../components/ui/SectionLabel'
+
 import Container from '../components/layout/Container'
 
+import PageMetadata from '../components/seo/PageMetadata'
+
 import projects from '../data/projects'
+import { PAGE_METADATA } from '../data/seo'
 
 const projectOrder = [
   'trouve-ton-artisan',
@@ -32,6 +36,8 @@ function Projects() {
 
   return (
     <div className="projects-page">
+      <PageMetadata {...PAGE_METADATA.projects} />
+
       <Container>
         {/* Page introduction */}
         <header className="projects-page__intro">

@@ -1,14 +1,20 @@
-import Container from '../components/layout/Container'
 import Divider from '../components/ui/Divider'
 import SectionLabel from '../components/ui/SectionLabel'
 
+import Container from '../components/layout/Container'
+
+import PageMetadata from '../components/seo/PageMetadata'
+
 import legal from '../data/legal'
+import { PAGE_METADATA } from '../data/seo'
 
 function Legal() {
   const { introduction, lastUpdated, publisher, hosting, sections } = legal
 
   return (
     <div className="legal-page">
+      <PageMetadata {...PAGE_METADATA.legal} />
+
       {/* Introduction */}
       <section className="legal-page__section" aria-labelledby="legal-title">
         <Container>

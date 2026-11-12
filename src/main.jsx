@@ -9,6 +9,14 @@ import { BrowserRouter } from 'react-router'
 import App from './App.jsx'
 import './styles/main.scss'
 
+function removeStaticSeoMetadata() {
+  document.querySelectorAll('[data-static-seo="true"]').forEach((element) => {
+    element.remove()
+  })
+}
+
+removeStaticSeoMetadata()
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
