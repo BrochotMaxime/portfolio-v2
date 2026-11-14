@@ -23,6 +23,9 @@
 
 @use 'components/resume-document';
 
+@use 'features/consent/consent-banner';
+@use 'features/consent/consent-preferences';
+
 @use 'pages/projects';
 @use 'pages/project-detail';
 @use 'pages/about';

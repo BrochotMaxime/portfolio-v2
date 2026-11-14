@@ -7,7 +7,7 @@ const legal = {
       'Legal notices, website information, and details about the processing of personal data.',
   },
 
-  lastUpdated: '2026-11-05',
+  lastUpdated: '2026-11-13',
 
   publisher: {
     name: site.owner,
@@ -53,6 +53,7 @@ const legal = {
       title: 'Personal data',
       paragraphs: [
         'Personal data is processed to operate and secure this website and respond to contact requests. Contact form submissions are processed on the basis of legitimate interests under Article 6(1)(f) of the GDPR.',
+        'With your consent, Google Analytics 4 is used to measure website traffic and page views. This processing is based on consent under Article 6(1)(a) of the GDPR.',
         'Contact information is not used for advertising or automated profiling. Technical service providers may process data as described below.',
       ],
       label: 'PRIVACY',
@@ -72,11 +73,24 @@ const legal = {
       id: 'cookies',
       title: 'Cookies and analytics',
       paragraphs: [
-        'This website does not currently use analytics or advertising tracking services.',
+        'This website uses Google Analytics 4, provided by Google, to measure website traffic and page views. Analytics is optional and is only activated after you have given your consent.',
+        'Google Analytics may collect information such as pages visited, visit times, approximate geographic location, device and browser information, and online identifiers. Analytics cookies may be stored on your device when you accept tracking.',
+        'You can accept or reject analytics cookies through the consent banner. Your choice is stored locally in your browser for 60 days. You can change or withdraw your consent at any time using the Cookie settings button in the website footer.',
+        'If you reject or withdraw consent, Google Analytics tracking is disabled. The website remains fully functional without analytics cookies.',
+        'Google may process analytics data outside the European Economic Area, subject to applicable data protection safeguards.',
         'Cloudflare Turnstile is used to protect the contact form against automated submissions. It processes technical information for security verification. The optional pre-clearance feature is disabled.',
-        'Any future use of non-essential cookies or tracking technologies will be subject to applicable consent requirements.',
       ],
       label: 'COOKIES',
+      links: [
+        {
+          label: 'Google Privacy Policy',
+          href: 'https://policies.google.com/privacy',
+        },
+        {
+          label: 'How Google uses information from sites or apps that use its services',
+          href: 'https://policies.google.com/technologies/partner-sites',
+        },
+      ],
     },
     {
       id: 'user-rights',
