@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { Outlet } from 'react-router'
 
 import ScrollToTop from './ScrollToTop'
@@ -21,7 +22,9 @@ function MainLayout() {
 
       {/* Current route content */}
       <main id="main-content" className="main-layout__content">
-        <Outlet />
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
       </main>
 
       <Divider />
