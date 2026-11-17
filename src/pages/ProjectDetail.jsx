@@ -68,7 +68,14 @@ function ProjectDetail() {
 
           {heroImage && (
             <div className="project-detail__hero">
-              <img src={heroImage.src} alt={heroImage.alt} />
+              <img
+                src={heroImage.src}
+                alt={heroImage.alt}
+                width={1917}
+                height={946}
+                loading="eager"
+                decoding="async"
+              />
             </div>
           )}
         </section>
@@ -112,7 +119,14 @@ function ProjectDetail() {
               >
                 {feature.image && (
                   <div className="project-detail__feature-image">
-                    <img src={feature.image.src} alt={feature.image.alt} loading="lazy" />
+                    <img
+                      src={feature.image.src}
+                      alt={feature.image.alt}
+                      width={1917}
+                      height={946}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 )}
 

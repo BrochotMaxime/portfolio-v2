@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 
 import ActionLink from './ActionLink'
 
-function ProjectCard({ project, headingLevel = 3, layout }) {
+function ProjectCard({ project, headingLevel = 3, layout, imagePriority = false }) {
   const { slug, title, description, technologies, image, imageAlt } = project
 
   const Heading = headingLevel === 2 ? 'h2' : 'h3'
@@ -21,7 +21,14 @@ function ProjectCard({ project, headingLevel = 3, layout }) {
           aria-label={`View ${title} project`}
         >
           <div className="project-card__image-wrapper">
-            <img src={image} alt={imageAlt} className="project-card__image" loading="lazy" />
+            <img
+              src={image}
+              alt={imageAlt}
+              className="project-card__image"
+              loading={imagePriority ? 'eager' : 'lazy'}
+              fetchPriority={imagePriority ? 'high' : 'auto'}
+              decoding="async"
+            />
           </div>
         </Link>
       )}

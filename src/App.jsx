@@ -1,16 +1,17 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router'
 
 import MainLayout from './components/layout/MainLayout'
 
-import Home from './pages/Home'
-import Projects from './pages/Projects'
-import ProjectDetail from './pages/ProjectDetail'
-import About from './pages/About'
-import Resume from './pages/Resume'
-import ResumeDocumentPage from './pages/ResumeDocumentPage'
-import Contact from './pages/Contact'
-import Legal from './pages/Legal'
-import NotFound from './pages/NotFound'
+const Home = lazy(() => import('./pages/Home'))
+const Projects = lazy(() => import('./pages/Projects'))
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
+const About = lazy(() => import('./pages/About'))
+const Resume = lazy(() => import('./pages/Resume'))
+const ResumeDocumentPage = lazy(() => import('./pages/ResumeDocumentPage'))
+const Contact = lazy(() => import('./pages/Contact'))
+const Legal = lazy(() => import('./pages/Legal'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 function App() {
   return (
@@ -30,8 +31,22 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Route>
 
-      <Route path="resume/fr" element={<ResumeDocumentPage language="fr" />} />
-      <Route path="resume/en" element={<ResumeDocumentPage language="en" />} />
+      <Route
+        path="/resume/fr"
+        element={
+          <Suspense fallback={null}>
+            <ResumeDocumentPage language="fr" />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/resume/en"
+        element={
+          <Suspense fallback={null}>
+            <ResumeDocumentPage language="en" />
+          </Suspense>
+        }
+      />
     </Routes>
   )
 }
