@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router'
 
 import MainLayout from './components/layout/MainLayout'
 
-const Home = lazy(() => import('./pages/Home'))
+import Home from './pages/Home'
 const Projects = lazy(() => import('./pages/Projects'))
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
 const About = lazy(() => import('./pages/About'))
