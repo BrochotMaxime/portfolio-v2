@@ -56,7 +56,12 @@ function Projects() {
         <section className="projects-page__list" aria-label="Projects">
           {orderedProjects.map((project, index) => (
             <Fragment key={project.id}>
-              <ProjectCard project={project} headingLevel={2} layout={projectLayouts[project.id]} />
+              <ProjectCard
+                project={project}
+                headingLevel={2}
+                layout={projectLayouts[project.id]}
+                imagePriority={index === 0}
+              />
 
               {index < orderedProjects.length - 1 && <Divider />}
             </Fragment>
