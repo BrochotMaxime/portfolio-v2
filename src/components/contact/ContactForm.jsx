@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router'
 import { Turnstile } from '@marsidev/react-turnstile'
 
 import contact from '../../data/contact'
@@ -234,7 +235,7 @@ export default function ContactForm() {
 
       <p className="contact-form__privacy">
         {form.privacyNotice.text}{' '}
-        <a href={form.privacyNotice.link.to}>{form.privacyNotice.link.label}</a>
+        <Link to={form.privacyNotice.link.to}>{form.privacyNotice.link.label}</Link>
       </p>
     </form>
   )
