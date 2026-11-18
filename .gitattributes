@@ -5,6 +5,7 @@
 
 # Enforce LF line endings for source and configuration files
 *.js text eol=lf
+*.mjs text eol=lf
 *.jsx text eol=lf
 *.json text eol=lf
 *.html text eol=lf

@@ -1,5 +1,3 @@
-import ProfilePicture from '/images/profile-picture.webp?url'
-
 import site from './site'
 
 const resume = {
@@ -9,7 +7,7 @@ const resume = {
     email: site.email,
     github: site.socialLinks.github,
     portfolio: site.portfolio,
-    photo: ProfilePicture,
+    photo: '/images/profile-picture.webp',
   },
 
   projects: [
