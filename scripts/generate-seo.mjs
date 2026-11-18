@@ -124,6 +124,22 @@ async function generatePage(template, metadata) {
   console.log(`Generated: ${pagePath}`)
 }
 
+async function generateNotFoundPage(template) {
+  const metadata = {
+    title: 'Page Not Found | Maxime Brochot',
+    description: 'The page you are looking for does not exist.',
+    path: '/404',
+    noindex: true,
+    image: null,
+  }
+
+  const outputPath = path.join(distDirectory, '404.html')
+
+  await writeFile(outputPath, createPageHtml(template, metadata), 'utf8')
+
+  console.log('Generated: /404.html')
+}
+
 async function generateSitemap(pages) {
   const publicPages = pages.filter((metadata) => !metadata.noindex)
 
@@ -161,6 +177,8 @@ async function main() {
   for (const metadata of pages) {
     await generatePage(template, metadata)
   }
+
+  await generateNotFoundPage(template)
 
   await generateSitemap(pages)
 
