@@ -1,4 +1,4 @@
-export const CONTACT_LIMITS = {
+const CONTACT_LIMITS = {
   name: { min: 2, max: 100 },
   email: { max: 254 },
   subject: { max: 150 },
